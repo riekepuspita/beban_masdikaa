@@ -59,8 +59,8 @@ class produkhukumController extends Controller
             'lokasi' => 'required',
             'abstraksi' => 'required',
             'catatan' => 'required',
-            // 'file_peraturan' => 'required|file',
-            // 'file_abstraksi' => 'required|file',
+            'file_peraturan' => 'required|file',
+            'file_abstraksi' => 'required|file',
 
 
         ]);
@@ -93,8 +93,8 @@ class produkhukumController extends Controller
             $produkhukum->lokasi = $request->input('lokasi');
             $produkhukum->abstraksi = $request->input('abstraksi');
             $produkhukum->catatan = $request->input('catatan');
-            // $produkhukum->file_peraturan = $request->input('file_peraturan');
-            // $produkhukum->file_abstraksi = $request->input('file_abstraksi');
+            $produkhukum->file_peraturan = $request->input('file_peraturan');
+            $produkhukum->file_abstraksi = $request->input('file_abstraksi');
 
             $produkhukum->save();
             return response()->json([
@@ -102,6 +102,8 @@ class produkhukumController extends Controller
                 'message' => 'Produk Hukum ADDED Successfully',
 
             ]);
+
+            
         }
     }
 }

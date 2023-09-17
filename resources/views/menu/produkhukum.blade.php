@@ -67,14 +67,14 @@
                                                     <div class="col-md-2 offset-md-7">
 
                                                         <select class="form-select" id="filter" name="filter">
-                                                            <option value=""selected disabled hidden>
-                                                                Tipe Dokumen</option>
+                                                            <option value="semua" selected>
+                                                                Semua Tipe Dokumen</option>
                                                             @foreach ($filterph as $filterph)
-                                                                <option value="{{ $filterph->id_tipe }}">
+                                                                <option value="{{ $filterph->nama_tipe }}">
                                                                     {{ $filterph->nama_tipe }} </option>
                                                             @endforeach
                                                         </select>
-                                                            
+
                                                     </div>
                                                     <table id="kt_datatable_dom_positioning"
                                                         class="table table-striped table-row-bordered gy-5 gs-7 border rounded ">
@@ -132,7 +132,7 @@
 
 @section('script')
     <script>
-        $("#kt_datatable_dom_positioning").DataTable({
+        var table = $("#kt_datatable_dom_positioning").DataTable({
             "language": {
                 "lengthMenu": "Show _MENU_",
             },
@@ -148,6 +148,16 @@
                 "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
                 ">"
         });
+
+        // Filter tipe dokumen
+        $('#filter').on('change', function() {
+            var selVal = $(this).val();
+            if (selVal === 'semua') {
+                table.column(1).search('').draw();
+            } else {
+                table.column(1).search(selVal).draw();
+            }
+        })
 
         function filterTable() {
             // Variables
@@ -169,5 +179,6 @@
                 }
             }
         }
+        
     </script>
 @endsection
