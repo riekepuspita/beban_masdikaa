@@ -64,7 +64,7 @@
                                         <div class="card mb-5 mb-xl-8">
                                             <div class="card-body py-3">
                                                 <div class="table-responsive">
-                                                    <div class="col-md-2 offset-md-7">
+                                                    <div class="col-md-3 offset-md-9">
 
                                                         <select class="form-select" id="filter" name="filter">
                                                             <option value="semua" selected>
@@ -179,6 +179,5 @@
                 }
             }
         }
-        
     </script>
 @endsection
