@@ -9,6 +9,7 @@ use App\Models\Tahun;
 // use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class produkhukumController extends Controller
 {
@@ -35,6 +36,7 @@ class produkhukumController extends Controller
         return view('menu.tambahprodukhukum', ['tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun]);
     }
 
+
     public function store_tambahprodukhukum(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -59,8 +61,8 @@ class produkhukumController extends Controller
             'lokasi' => 'required',
             'abstraksi' => 'required',
             'catatan' => 'required',
-            'file_peraturan' => 'required|file',
-            'file_abstraksi' => 'required|file',
+            'file_peraturan' => 'required',
+            'file_abstraksi' => 'required',
 
 
         ]);
@@ -96,14 +98,29 @@ class produkhukumController extends Controller
             $produkhukum->file_peraturan = $request->input('file_peraturan');
             $produkhukum->file_abstraksi = $request->input('file_abstraksi');
 
+
+
+            $folderPath = public_path('upload/produk');
+            if (!file_exists($folderPath)) {
+                mkdir($folderPath, 0755, true);
+            }
+
+            // Mengunggah file gambar ke folder "upload"
+            $nama1 = strtolower('file-' . preg_replace('/[^\p{L}\p{N}]+/u', '-', $request->input('file_peraturan')) . uniqid());
+            $namaFile = $nama1 . '.' . $produkhukum->getClientOriginalExtension();
+            $produkhukum->move($folderPath, $namaFile);
+
+            // Mengunggah file gambar ke folder "upload"
+            $nama2 = strtolower('file-' . preg_replace('/[^\p{L}\p{N}]+/u', '-', $request->input('file_abstraksi')) . uniqid());
+            $namaFile = $nama2 . '.' . $produkhukum->getClientOriginalExtension();
+            $produkhukum->move($folderPath, $namaFile);
+
             $produkhukum->save();
             return response()->json([
                 'status' => 200,
                 'message' => 'Produk Hukum ADDED Successfully',
 
             ]);
-
-            
         }
     }
 }

@@ -258,13 +258,15 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="mb-3 row">
-                                                                        <label for="ctk"
+                                                                        <label for="c"
                                                                             class="col-md-4 col-form-label">Catatan</label>
                                                                         <div class="col-md-8">
                                                                             <textarea class="form-control" id="catatan" name="catatan" rows="4"></textarea>
                                                                         </div>
                                                                     </div>
 
+                                                                    {{-- <form action="{{ route('upload-peraturan') }}" method="POST" enctype="multipart/form-data">
+                                                                        @csrf --}}
                                                                     <div class="mb-3 row">
                                                                         <label for="ctk"
                                                                             class="col-md-4 col-form-label">File
@@ -383,8 +385,8 @@
                     'lokasi': $('#lokasi').val(),
                     'abstraksi': $('#abstraksi').val(),
                     'catatan': $('#catatan').val(),
-                    // 'file_peraturan': $('#fileperaturan').val(),
-                    // 'file_abstraksi': $('#fileabstraksi').val(),
+                    'file_peraturan': $('#fileperaturan').val(),
+                    'file_abstraksi': $('#fileabstraksi').val(),
 
                 }
                 // alert(data)
