@@ -10,6 +10,7 @@ use App\Models\Tahun;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class produkhukumController extends Controller
 {
@@ -100,20 +101,37 @@ class produkhukumController extends Controller
 
 
 
-            $folderPath = public_path('upload/produk');
-            if (!file_exists($folderPath)) {
-                mkdir($folderPath, 0755, true);
-            }
+            // $folderPath = public_path('upload');
+            // if (!file_exists($folderPath)) {
+            //     mkdir($folderPath, 0755, true);
+            // }
 
-            // Mengunggah file gambar ke folder "upload"
-            $nama1 = strtolower('file-' . preg_replace('/[^\p{L}\p{N}]+/u', '-', $request->input('file_peraturan')) . uniqid());
-            $namaFile = $nama1 . '.' . $produkhukum->getClientOriginalExtension();
-            $produkhukum->move($folderPath, $namaFile);
 
-            // Mengunggah file gambar ke folder "upload"
-            $nama2 = strtolower('file-' . preg_replace('/[^\p{L}\p{N}]+/u', '-', $request->input('file_abstraksi')) . uniqid());
-            $namaFile = $nama2 . '.' . $produkhukum->getClientOriginalExtension();
-            $produkhukum->move($folderPath, $namaFile);
+            // // Mengunggah file gambar ke folder "upload"
+            // $nama1 = strtolower('file_peraturan-' . uniqid());
+            // $namaFile1 = $nama1 . '.' . $request->file('file_peraturan')->getClientOriginalExtension();
+            // $nama2 = strtolower('file_abstraksi-' . uniqid());
+            // $namaFile2 = $nama2 . '.' . $request->file('file_abstraksi')->getClientOriginalExtension();
+            // $request->input('file_peraturan')->move($folderPath, $namaFile1);
+            // $request->input('file_abstraksi')->move($folderPath, $namaFile2);
+
+            // if ($request->hasFile('file_peraturan') && $request->hasFile('file_abstraksi')) {
+            //     $nama1 = strtolower('file_peraturan-' . uniqid());
+            //     $namaFile1 = $nama1 . '.' . $request->file('file_peraturan')->getClientOriginalExtension();
+            //     $nama2 = strtolower('file_abstraksi-' . uniqid());
+            //     $namaFile2 = $nama2 . '.' . $request->file('file_abstraksi')->getClientOriginalExtension();
+            
+            //     $request->file('file_peraturan')->move($folderPath, $namaFile1);
+            //     $request->file('file_abstraksi')->move($folderPath, $namaFile2);
+
+            // } else {
+            //     // Handle jika file tidak diunggah dengan benar
+            //     return response()->json([
+            //         'status' => 400,
+            //         'message' => 'File tidak diunggah dengan benar.',
+            //     ]);
+            // }
+
 
             $produkhukum->save();
             return response()->json([

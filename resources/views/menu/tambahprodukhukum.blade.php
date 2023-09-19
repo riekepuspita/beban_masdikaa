@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Tambah Informasi Hukum
+    Tambah Produk Hukum
 @endsection
 
 @section('head')
@@ -265,35 +265,38 @@
                                                                         </div>
                                                                     </div>
 
-                                                                    {{-- <form action="{{ route('upload-peraturan') }}" method="POST" enctype="multipart/form-data">
+                                                                    {{-- <form action="{{ route('upload') }}"
+                                                                        method="POST" enctype="multipart/form-data">
                                                                         @csrf --}}
-                                                                    <div class="mb-3 row">
-                                                                        <label for="ctk"
-                                                                            class="col-md-4 col-form-label">File
-                                                                            Peraturan</label>
-                                                                        <div class="col-md-5 d-flex align-items-center">
-                                                                            <input type="file" id="fileperaturan">
+                                                                        <div class="mb-3 row">
+                                                                            <label for="ctk"
+                                                                                class="col-md-4 col-form-label">File
+                                                                                Peraturan</label>
+                                                                            <div
+                                                                                class="col-md-5 d-flex align-items-center">
+                                                                                <input type="file" id="fileperaturan">
 
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="mb-3 row">
-                                                                        <label for="ctk"
-                                                                            class="col-md-4 col-form-label">File
-                                                                            Abstraksi</label>
-                                                                            <div class="col-md-5 d-flex align-items-center">
-                                                                                <input type="file" id="fileabstraksi">
-    
                                                                             </div>
-                                                                    </div>
+                                                                        </div>
 
-                                                                    <div class="d-flex justify-content-end">
-                                                                        <button type="submit"
-                                                                            class="btn btn-success me-3 add_produkhukum">Simpan</button>
+                                                                        <div class="mb-3 row">
+                                                                            <label for="ctk"
+                                                                                class="col-md-4 col-form-label">File
+                                                                                Abstraksi</label>
+                                                                            <div
+                                                                                class="col-md-5 d-flex align-items-center">
+                                                                                <input type="file" id="fileabstraksi">
 
-                                                                        <a href="/produkhukum"
-                                                                            class="btn btn-danger">Batal</a>
-                                                                    </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="d-flex justify-content-end">
+                                                                            <button type="submit"
+                                                                                class="btn btn-success me-3 add_produkhukum">Simpan</button>
+
+                                                                            <a href="/produkhukum"
+                                                                                class="btn btn-danger">Batal</a>
+                                                                        </div>
                                                                 </div>
                                                             </form>
                                                         </div>

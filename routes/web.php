@@ -36,6 +36,10 @@ Route::get('produkhukum', function () {
     return view('menu.produkhukum');
 })->name('menu.produkhukum');
 
+Route::get('lihatprodukhukum', function () {
+    return view('menu.lihatprodukhukum');
+})->name('menu.lihatprodukhukum');
+
 Route::get('tambahprodukhukum', function () {
     return view('menu.tambahprodukhukum');
 })->name('menu.tambahprodukhukum');
@@ -48,9 +52,11 @@ Route::get('tambahkegiatanhukum', function () {
     return view('menu.tambahkegiatan');
 })->name('menu.tambahkegiatan');
 
+
 Route::get('informasihukum', [informasihukumController::class, 'index'])->name('menu.informasihukum');
 Route::get('produkhukum', [produkhukumController::class, 'index'])->name('menu.produkhukum');
 Route::get('kegiatanhukum', [kegiatanhukumController::class, 'index'])->name('menu.kegiatanhukum');
 Route::post('/produkhukum/add', [produkhukumController::class, 'store_tambahprodukhukum']);
 Route::get('/tambahprodukhukum', [produkhukumController::class, 'pilihanprodukhukum'])->name('menu.tambahprodukhukum');
 Route::get('/produk', [produkhukumController::class, 'index'])->name('produk.index');
+// Route::post('upload', [produkhukumController::class, 'store_tambahprodukhukum'])->name('upload');
