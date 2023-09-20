@@ -56,7 +56,7 @@ Route::get('tambahkegiatanhukum', function () {
 Route::get('informasihukum', [informasihukumController::class, 'index'])->name('menu.informasihukum');
 Route::get('produkhukum', [produkhukumController::class, 'index'])->name('menu.produkhukum');
 Route::get('kegiatanhukum', [kegiatanhukumController::class, 'index'])->name('menu.kegiatanhukum');
-Route::post('/produkhukum/add', [produkhukumController::class, 'store_tambahprodukhukum']);
+Route::post('/produkhukum/add', [produkhukumController::class, 'store_tambahprodukhukum'])->name('add_produkhukum');
 Route::get('/tambahprodukhukum', [produkhukumController::class, 'pilihanprodukhukum'])->name('menu.tambahprodukhukum');
 Route::get('/produk', [produkhukumController::class, 'index'])->name('produk.index');
 // Route::post('upload', [produkhukumController::class, 'store_tambahprodukhukum'])->name('upload');

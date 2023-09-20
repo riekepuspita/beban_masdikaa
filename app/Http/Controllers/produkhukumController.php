@@ -38,6 +38,7 @@ class produkhukumController extends Controller
     }
 
 
+
     public function store_tambahprodukhukum(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -62,12 +63,9 @@ class produkhukumController extends Controller
             'lokasi' => 'required',
             'abstraksi' => 'required',
             'catatan' => 'required',
-            'file_peraturan' => 'required',
-            'file_abstraksi' => 'required',
-
-
+            // 'file_peraturan' => 'required',
+            // 'file_abstraksi' => 'required',
         ]);
-
         if ($validator->fails()) {
             return response()->json([
                 'status' => 400,
@@ -96,43 +94,21 @@ class produkhukumController extends Controller
             $produkhukum->lokasi = $request->input('lokasi');
             $produkhukum->abstraksi = $request->input('abstraksi');
             $produkhukum->catatan = $request->input('catatan');
-            $produkhukum->file_peraturan = $request->input('file_peraturan');
-            $produkhukum->file_abstraksi = $request->input('file_abstraksi');
 
+            $folderPath = public_path('upload');
+            if (!file_exists($folderPath)) {
+                mkdir($folderPath, 0755, true);
+            }
 
+            $namaFile1 = 'file_peraturan-' . uniqid() . '.' . $request->file('file_peraturan')->getClientOriginalExtension();
+            $namaFile2 = 'file_abstraksi-' . uniqid() . '.' . $request->file('file_abstraksi')->getClientOriginalExtension();
 
-            // $folderPath = public_path('upload');
-            // if (!file_exists($folderPath)) {
-            //     mkdir($folderPath, 0755, true);
-            // }
+            $request->file('file_peraturan')->move($folderPath, $namaFile1);
+            $request->file('file_abstraksi')->move($folderPath, $namaFile2);
 
-
-            // // Mengunggah file gambar ke folder "upload"
-            // $nama1 = strtolower('file_peraturan-' . uniqid());
-            // $namaFile1 = $nama1 . '.' . $request->file('file_peraturan')->getClientOriginalExtension();
-            // $nama2 = strtolower('file_abstraksi-' . uniqid());
-            // $namaFile2 = $nama2 . '.' . $request->file('file_abstraksi')->getClientOriginalExtension();
-            // $request->input('file_peraturan')->move($folderPath, $namaFile1);
-            // $request->input('file_abstraksi')->move($folderPath, $namaFile2);
-
-            // if ($request->hasFile('file_peraturan') && $request->hasFile('file_abstraksi')) {
-            //     $nama1 = strtolower('file_peraturan-' . uniqid());
-            //     $namaFile1 = $nama1 . '.' . $request->file('file_peraturan')->getClientOriginalExtension();
-            //     $nama2 = strtolower('file_abstraksi-' . uniqid());
-            //     $namaFile2 = $nama2 . '.' . $request->file('file_abstraksi')->getClientOriginalExtension();
+            $produkhukum->file_peraturan = $namaFile1;
+            $produkhukum->file_abstraksi = $namaFile2;
             
-            //     $request->file('file_peraturan')->move($folderPath, $namaFile1);
-            //     $request->file('file_abstraksi')->move($folderPath, $namaFile2);
-
-            // } else {
-            //     // Handle jika file tidak diunggah dengan benar
-            //     return response()->json([
-            //         'status' => 400,
-            //         'message' => 'File tidak diunggah dengan benar.',
-            //     ]);
-            // }
-
-
             $produkhukum->save();
             return response()->json([
                 'status' => 200,

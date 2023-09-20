@@ -116,7 +116,7 @@
                                                                             Peraturan</label>
                                                                         <div class="col-md-8">
                                                                             <input class="form-control" id="noprt"
-                                                                                name="noprt">
+                                                                                name="noprt" pattern="[0-9]+" required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="mb-3 row">
@@ -268,35 +268,33 @@
                                                                     {{-- <form action="{{ route('upload') }}"
                                                                         method="POST" enctype="multipart/form-data">
                                                                         @csrf --}}
-                                                                        <div class="mb-3 row">
-                                                                            <label for="ctk"
-                                                                                class="col-md-4 col-form-label">File
-                                                                                Peraturan</label>
-                                                                            <div
-                                                                                class="col-md-5 d-flex align-items-center">
-                                                                                <input type="file" id="fileperaturan">
+                                                                    <div class="mb-3 row">
+                                                                        <label for="ctk"
+                                                                            class="col-md-4 col-form-label">File
+                                                                            Peraturan</label>
+                                                                        <div class="col-md-5 d-flex align-items-center">
+                                                                            <input type="file" id="fileperaturan" name="fileperaturan">
 
-                                                                            </div>
                                                                         </div>
+                                                                    </div>
 
-                                                                        <div class="mb-3 row">
-                                                                            <label for="ctk"
-                                                                                class="col-md-4 col-form-label">File
-                                                                                Abstraksi</label>
-                                                                            <div
-                                                                                class="col-md-5 d-flex align-items-center">
-                                                                                <input type="file" id="fileabstraksi">
+                                                                    <div class="mb-3 row">
+                                                                        <label for="ctk"
+                                                                            class="col-md-4 col-form-label">File
+                                                                            Abstraksi</label>
+                                                                        <div class="col-md-5 d-flex align-items-center">
+                                                                            <input type="file" id="fileabstraksi" name="fileabstraksi">
 
-                                                                            </div>
                                                                         </div>
+                                                                    </div>
 
-                                                                        <div class="d-flex justify-content-end">
-                                                                            <button type="submit"
-                                                                                class="btn btn-success me-3 add_produkhukum">Simpan</button>
+                                                                    <div class="d-flex justify-content-end">
+                                                                        <button type="button"
+                                                                            class="btn btn-success me-3 add_produkhukum">Simpan</button>
 
-                                                                            <a href="/produkhukum"
-                                                                                class="btn btn-danger">Batal</a>
-                                                                        </div>
+                                                                        <a href="/produkhukum"
+                                                                            class="btn btn-danger">Batal</a>
+                                                                    </div>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -364,34 +362,30 @@
         $(document).ready(function() {
             $(document).on('click', '.add_produkhukum', function(e) {
                 e.preventDefault();
-
-
-                var data = {
-                    'id_tahun': $('#sel0').val(),
-                    'id_tipe': $('#sel1').val(),
-                    'judul': $('#judul').val(),
-                    'badan_pengarang': $('#teu').val(),
-                    'no_peraturan': $('#noprt').val(),
-                    'no_panggil': $('#nopgl').val(),
-                    'jenis_bentuk_peraturan': $('#jenis').val(),
-                    'singkatan_jenis': $('#sjns').val(),
-                    'cetakan_edisi': $('#ctk').val(),
-                    'tempat_terbit': $('#tempatterbit').val(),
-                    'penerbit': $('#penerbit').val(),
-                    'tanggal_penetapan': $('#tanggalpenetapan').val(),
-                    'deskripsi_fisik': $('#deskripsi').val(),
-                    'sumber': $('#sumber').val(),
-                    'subjek': $('#subjek').val(),
-                    'isbn': $('#isbn').val(),
-                    'id_status': $('#sel2').val(),
-                    'bahasa': $('#bahasa').val(),
-                    'lokasi': $('#lokasi').val(),
-                    'abstraksi': $('#abstraksi').val(),
-                    'catatan': $('#catatan').val(),
-                    'file_peraturan': $('#fileperaturan').val(),
-                    'file_abstraksi': $('#fileabstraksi').val(),
-
-                }
+                var formData = new FormData();
+                formData.append('id_tahun', $('#sel0').val());
+                formData.append('id_tipe', $('#sel1').val());
+                formData.append('judul', $('#judul').val());
+                formData.append('badan_pengarang', $('#teu').val());
+                formData.append('no_peraturan', $('#noprt').val());
+                formData.append('no_panggil', $('#nopgl').val());
+                formData.append('jenis_bentuk_peraturan', $('#jenis').val());
+                formData.append('singkatan_jenis', $('#sjns').val());
+                formData.append('cetakan_edisi', $('#ctk').val());
+                formData.append('tempat_terbit', $('#tempatterbit').val());
+                formData.append('penerbit', $('#penerbit').val());
+                formData.append('tanggal_penetapan', $('#tanggalpenetapan').val());
+                formData.append('deskripsi_fisik', $('#deskripsi').val());
+                formData.append('sumber', $('#sumber').val());
+                formData.append('subjek', $('#subjek').val());
+                formData.append('isbn', $('#isbn').val());
+                formData.append('id_status', $('#sel2').val());
+                formData.append('bahasa', $('#bahasa').val());
+                formData.append('lokasi', $('#lokasi').val());
+                formData.append('abstraksi', $('#abstraksi').val());
+                formData.append('catatan', $('#catatan').val());
+                formData.append('file_peraturan', $('#fileperaturan')[0].files[0]);
+                formData.append('file_abstraksi', $('#fileabstraksi')[0].files[0]);
                 // alert(data)
                 // console.log(data);
                 $.ajaxSetup({
@@ -402,11 +396,13 @@
 
                 $.ajax({
                     type: "post",
-                    url: "/produkhukum/add",
-                    data: data,
+                    url: "{{ route('add_produkhukum') }}",
+                    data: formData,
                     dataType: "json",
+                    contentType: false,
+                    processData: false,
                     success: function(response) {
-                        // console.log(response);
+                        console.log(response);
                         if (response.status == 400) {
                             $('#saveform_errList').html("");
                             $('#saveform_errList').addClass('alert alert-danger');
@@ -420,7 +416,7 @@
                             $('#success_message').text(response.message)
                             $('#AddSptLemburModal').modal('hide');
                             $('#AddSptLemburModal').find('input').val("");
-                            window.location.href = '/produkhukum';
+                            window.location.href = "{{ route('menu.produkhukum') }}";
 
 
                         }
