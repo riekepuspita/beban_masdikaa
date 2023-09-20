@@ -273,7 +273,7 @@
                                                                             class="col-md-4 col-form-label">File
                                                                             Peraturan</label>
                                                                         <div class="col-md-5 d-flex align-items-center">
-                                                                            <input type="file" id="fileperaturan" name="fileperaturan">
+                                                                            <input type="file" id="fileperaturan" name="fileperaturan" accept=".pdf">
 
                                                                         </div>
                                                                     </div>
@@ -283,7 +283,7 @@
                                                                             class="col-md-4 col-form-label">File
                                                                             Abstraksi</label>
                                                                         <div class="col-md-5 d-flex align-items-center">
-                                                                            <input type="file" id="fileabstraksi" name="fileabstraksi">
+                                                                            <input type="file" id="fileabstraksi" name="fileabstraksi" accept=".pdf">
 
                                                                         </div>
                                                                     </div>

@@ -94,8 +94,8 @@
                                                                     <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
                                                                     <td>{{ $data->judul }}</td>
                                                                     <td>{{ $data->relasi_id_status->status }}</td>
-                                                                    <td><button type="button"
-                                                                            class="btn btn-primary">Lihat</button></td>
+                                                                    <td><a href="produk/{{ $data->id }}" class="btn btn-primary">Lihat</a>
+                                                                    </td>
                                                                 </tr>
                                                             @endforeach
                                                         </tbody>

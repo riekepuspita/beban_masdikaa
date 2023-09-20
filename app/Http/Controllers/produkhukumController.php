@@ -63,8 +63,8 @@ class produkhukumController extends Controller
             'lokasi' => 'required',
             'abstraksi' => 'required',
             'catatan' => 'required',
-            // 'file_peraturan' => 'required',
-            // 'file_abstraksi' => 'required',
+            'file_peraturan' => 'required',
+            'file_abstraksi' => 'required',
         ]);
         if ($validator->fails()) {
             return response()->json([
@@ -117,4 +117,16 @@ class produkhukumController extends Controller
             ]);
         }
     }
+
+    public function view($id)
+    {
+        $data = ProdukHukum::find($id);
+
+        $tipe_dokumen = TipeDokumen::all();
+        $status = Status::all();
+        $tahun = Tahun::all();
+        
+        return view('menu.lihatprodukhukum', ['data'=>$data,'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun]);
+    }
+
 }

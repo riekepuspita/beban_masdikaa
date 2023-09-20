@@ -59,4 +59,5 @@ Route::get('kegiatanhukum', [kegiatanhukumController::class, 'index'])->name('me
 Route::post('/produkhukum/add', [produkhukumController::class, 'store_tambahprodukhukum'])->name('add_produkhukum');
 Route::get('/tambahprodukhukum', [produkhukumController::class, 'pilihanprodukhukum'])->name('menu.tambahprodukhukum');
 Route::get('/produk', [produkhukumController::class, 'index'])->name('produk.index');
+Route::get('/produk/{id}', [produkhukumController::class, 'view'])->name('produk.view');
 // Route::post('upload', [produkhukumController::class, 'store_tambahprodukhukum'])->name('upload');
