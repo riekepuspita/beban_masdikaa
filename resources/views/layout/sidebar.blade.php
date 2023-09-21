@@ -1,21 +1,15 @@
-<!--begin::Sidebar-->
 <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar"
     data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px"
     data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
-    <!--begin::Logo-->
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
-        <!--begin::Logo image-->
         <a href="{{ route('dasbor') }}">
             <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}" class="h-70px app-sidebar-logo-default" />
             <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}" class="h-70px app-sidebar-logo-minimize" />
         </a>
-        <!--end::Logo image-->
-        <!--begin::Sidebar toggle-->
         <div id="kt_app_sidebar_toggle"
             class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary body-bg h-30px w-30px position-absolute top-50 start-100 translate-middle rotate"
             data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"
             data-kt-toggle-name="app-sidebar-minimize">
-            <!--begin::Svg Icon | path: icons/duotune/arrows/arr079.svg-->
             <span class="svg-icon svg-icon-2 rotate-180">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -27,27 +21,19 @@
                         fill="currentColor" />
                 </svg>
             </span>
-            <!--end::Svg Icon-->
         </div>
-        <!--end::Sidebar toggle-->
     </div>
-    <!--end::Logo-->
-    <!--begin::sidebar menu-->
     <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
-        <!--begin::Menu wrapper-->
         <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5"
             data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto"
             data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer"
             data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
-            <!--begin::Menu-->
+
             <div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu"
                 data-kt-menu="true" data-kt-menu-expand="false">
-                <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
-                    <!--begin:Menu link-->
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/docs/metronic/html/releases/2023-07-21-074234/core/html/src/media/icons/duotune/abstract/abs029.svg-->
                             <span class="svg-icon svg-icon-muted svg-icon-2hx">
                                 <svg width="24" height="24" viewBox="0 0 30 30" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +56,7 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link active" href="../../demo1/dist/index.html">
+                            <a class="menu-link " href="../../demo1/dist/index.html">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -98,7 +84,7 @@
                 <!--begin:Menu item-->
                 <div class="menu-item menu-accordion">
                     <!--begin:Menu link-->
-                    <a class="menu-link" href="{{ route('menu.produkhukum') }}">
+                    <a class="menu-link " href="{{ route('menu.produkhukum') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/docs/metronic/html/releases/2023-07-21-074234/core/html/src/media/icons/duotune/general/gen028.svg-->
                             <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24"
@@ -273,3 +259,31 @@
     <!--end::sidebar menu-->
 </div>
 <!--end::Sidebar-->
+
+@section('script')
+<script>
+    
+    // Ambil URL saat ini
+    var currentUrl = window.location.href;
+
+    // Ambil semua elemen tautan menu
+    var menuLinks = document.querySelectorAll('.menu-link');
+
+    // Loop melalui tautan menu dan periksa URL
+    for (var i = 0; i < menuLinks.length; i++) {
+        var menuLink = menuLinks[i];
+        var menuUrl = menuLink.getAttribute('href');
+
+        // Bandingkan URL saat ini dengan URL tautan menu
+        if (currentUrl === menuUrl) {
+            // Tambahkan kelas 'active' ke tautan menu jika cocok
+            menuLink.classList.add('active');
+        } else {
+            // Hapus kelas 'active' dari tautan menu yang tidak cocok
+            menuLink.classList.remove('active');
+    }
+}
+</script>
+
+
+@endsection
