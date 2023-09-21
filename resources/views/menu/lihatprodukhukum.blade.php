@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Tambah Produk Hukum
+    Lihat Produk Hukum
 @endsection
 
 @section('head')
