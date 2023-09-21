@@ -57,6 +57,8 @@
                                                         <div class="mb-3 row">
                                                             <ul id="saveform_errList"></ul>
                                                             <form>
+                                                                <input type="hidden" id="id_produk"
+                                                                    value="{{ $data->id }}">
                                                                 <div class="mb-3 row">
                                                                     <label for="sel1"
                                                                         class="col-md-4 col-form-label">Tahun</label>
@@ -310,7 +312,7 @@
 
                                                                     <div class="d-flex justify-content-end">
                                                                         <button type="button"
-                                                                            class="btn btn-success me-3 add_produkhukum">Simpan
+                                                                            class="btn btn-success me-3 update_produkhukum">Simpan
                                                                             Perubahan</button>
 
                                                                         <a href="/produkhukum"
@@ -353,16 +355,77 @@
 @endsection
 
 @section('script')
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
-        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
-
-
-
     <script>
         $(document).ready(function() {
             $('#sel0').val({{ $data->id_tahun }}).change();
             $('#sel1').val({{ $data->id_tipe }}).change();
             $('#sel2').val({{ $data->id_status }}).change();
+
+            $(document).on('click', '.update_produkhukum', function(e) {
+                e.preventDefault();
+                var id_produk = $('#id_produk').val();
+                var formData = new FormData();
+                formData.append('id_tahun', $('#sel0').val());
+                formData.append('id_tipe', $('#sel1').val());
+                formData.append('judul', $('#judul').val());
+                formData.append('badan_pengarang', $('#teu').val());
+                formData.append('no_peraturan', $('#noprt').val());
+                formData.append('no_panggil', $('#nopgl').val());
+                formData.append('jenis_bentuk_peraturan', $('#jenis').val());
+                formData.append('singkatan_jenis', $('#sjns').val());
+                formData.append('cetakan_edisi', $('#ctk').val());
+                formData.append('tempat_terbit', $('#tempatterbit').val());
+                formData.append('penerbit', $('#penerbit').val());
+                formData.append('tanggal_penetapan', $('#tanggalpenetapan').val());
+                formData.append('deskripsi_fisik', $('#deskripsi').val());
+                formData.append('sumber', $('#sumber').val());
+                formData.append('subjek', $('#subjek').val());
+                formData.append('isbn', $('#isbn').val());
+                formData.append('id_status', $('#sel2').val());
+                formData.append('bahasa', $('#bahasa').val());
+                formData.append('lokasi', $('#lokasi').val());
+                formData.append('abstraksi', $('#abstraksi').val());
+                formData.append('catatan', $('#catatan').val());
+                // formData.append('file_peraturan', $('#fileperaturan')[0].files[0]);
+                // formData.append('file_abstraksi', $('#fileabstraksi')[0].files[0]);
+                // alert(data)
+                // console.log(data);
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    type: "post",
+                    url: "/produk/update/" + id_produk,
+                    data: formData,
+                    dataType: "json",
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        console.log(response);
+                        if (response.status == 400) {
+                            $('#saveform_errList').html("");
+                            $('#saveform_errList').addClass('alert alert-danger');
+                            $.each(response.errors, function(key, err_values) {
+                                $('#saveform_errList').append('<li>' + err_values +
+                                    '</li>');
+                            });
+                        } else {
+                            $('#saveform_errList').html("");
+                            $('#success_message').addClass('alert alert-success')
+                            $('#success_message').text(response.message)
+                            // window.location.href = "{{ route('menu.produkhukum') }}";
+                            window.location.href ="/produkhukum";
+
+
+                        }
+                    }
+                });
+
+
+            });
         });
     </script>
 @endsection
