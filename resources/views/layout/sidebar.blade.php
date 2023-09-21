@@ -273,31 +273,3 @@
     <!--end::sidebar menu-->
 </div>
 <!--end::Sidebar-->
-
-@section('script')
-<script>
-    
-    // Ambil URL saat ini
-    var currentUrl = window.location.href;
-
-    // Ambil semua elemen tautan menu
-    var menuLinks = document.querySelectorAll('.menu-link');
-
-    // Loop melalui tautan menu dan periksa URL
-    for (var i = 0; i < menuLinks.length; i++) {
-        var menuLink = menuLinks[i];
-        var menuUrl = menuLink.getAttribute('href');
-
-        // Bandingkan URL saat ini dengan URL tautan menu
-        if (currentUrl === menuUrl) {
-            // Tambahkan kelas 'active' ke tautan menu jika cocok
-            menuLink.classList.add('active');
-        } else {
-            // Hapus kelas 'active' dari tautan menu yang tidak cocok
-            menuLink.classList.remove('active');
-    }
-}
-</script>
-
-
-@endsection
