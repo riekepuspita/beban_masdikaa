@@ -414,8 +414,6 @@
                             $('#saveform_errList').html("");
                             $('#success_message').addClass('alert alert-success')
                             $('#success_message').text(response.message)
-                            $('#AddSptLemburModal').modal('hide');
-                            $('#AddSptLemburModal').find('input').val("");
                             window.location.href = "{{ route('menu.produkhukum') }}";
 
 

@@ -48,7 +48,6 @@ class produkhukumController extends Controller
             'badan_pengarang' => 'required',
             'no_peraturan' => 'required',
             'no_panggil' => 'required',
-            'judul' => 'required',
             'jenis_bentuk_peraturan' => 'required',
             'cetakan_edisi' => 'required',
             'tempat_terbit' => 'required',
@@ -108,7 +107,7 @@ class produkhukumController extends Controller
 
             $produkhukum->file_peraturan = $namaFile1;
             $produkhukum->file_abstraksi = $namaFile2;
-            
+
             $produkhukum->save();
             return response()->json([
                 'status' => 200,
@@ -125,8 +124,7 @@ class produkhukumController extends Controller
         $tipe_dokumen = TipeDokumen::all();
         $status = Status::all();
         $tahun = Tahun::all();
-        
-        return view('menu.lihatprodukhukum', ['data'=>$data,'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun]);
-    }
 
+        return view('menu.lihatprodukhukum', ['data' => $data, 'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun]);
+    }
 }
