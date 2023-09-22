@@ -57,12 +57,14 @@
                                                         <div class="mb-3 row">
                                                             <ul id="saveform_errList"></ul>
                                                             <form>
+                                                                <input type="hidden" id="id_produk"
+                                                                    value="{{ $data->id }}">
                                                                 <div class="mb-3 row">
                                                                     <label for="sel1"
                                                                         class="col-md-4 col-form-label">Tahun</label>
                                                                     <div class="col-md-8">
                                                                         <select class="form-select" id="sel0"
-                                                                            name="sellist0" disabled>
+                                                                            name="sellist0">
                                                                             <option value=""selected disabled hidden>
                                                                                 -- Pilih Tahun --</option>
                                                                             @foreach ($tahun as $tahun)
@@ -79,7 +81,7 @@
                                                                         Dokumen</label>
                                                                     <div class="col-md-8">
                                                                         <select class="form-select" id="sel1"
-                                                                            name="sellist1" disabled>
+                                                                            name="sellist1">
                                                                             <option value=""selected disabled hidden>
                                                                                 --
                                                                                 Pilih
@@ -99,7 +101,7 @@
                                                                         <label for="judul"
                                                                             class="col-md-4 col-form-label">Judul</label>
                                                                         <div class="col-md-8">
-                                                                            <textarea class="form-control" id="judul" name="judul" rows="4" readonly>{{ $data->judul }}</textarea>
+                                                                            <textarea class="form-control" id="judul" name="judul" rows="4">{{ $data->judul }}</textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="mb-3 row">
@@ -108,7 +110,7 @@
                                                                             Badan/Pengarang</label>
                                                                         <div class="col-md-8">
                                                                             <input type="text" class="form-control"
-                                                                                id="teu" name="teu" readonly
+                                                                                id="teu" name="teu"
                                                                                 value="{{ $data->badan_pengarang }}">
                                                                         </div>
                                                                     </div>
@@ -117,7 +119,7 @@
                                                                             Peraturan</label>
                                                                         <div class="col-md-8">
                                                                             <input class="form-control" id="noprt"
-                                                                                name="noprt" readonly pattern="[0-9]+" required
+                                                                                name="noprt" pattern="[0-9]+" required
                                                                                 value="{{ $data->no_peraturan }}">
                                                                         </div>
                                                                     </div>
@@ -127,7 +129,7 @@
                                                                             Panggil</label>
                                                                         <div class="col-md-8">
                                                                             <input type="nopgl" class="form-control"
-                                                                                id="nopgl" name="nopgl" readonly
+                                                                                id="nopgl" name="nopgl"
                                                                                 value="{{ $data->no_panggil }}">
                                                                         </div>
                                                                     </div>
@@ -138,7 +140,7 @@
                                                                             Peraturan</label>
                                                                         <div class="col-md-8">
                                                                             <input type="jenis" class="form-control"
-                                                                                id="jenis" name="jenis" readonly
+                                                                                id="jenis" name="jenis"
                                                                                 value="{{ $data->jenis_bentuk_peraturan }}">
                                                                         </div>
                                                                     </div>
@@ -149,7 +151,7 @@
                                                                             Bentuk Peraturan</label>
                                                                         <div class="col-md-8">
                                                                             <input type="sjns" class="form-control"
-                                                                                id="sjns" name="sjns" readonly
+                                                                                id="sjns" name="sjns"
                                                                                 value="{{ $data->singkatan_jenis }}">
                                                                         </div>
                                                                     </div>
@@ -159,7 +161,7 @@
                                                                             Edisi</label>
                                                                         <div class="col-md-8">
                                                                             <input type="ctk" class="form-control"
-                                                                                id="ctk" name="ctk" readonly
+                                                                                id="ctk" name="ctk"
                                                                                 value="{{ $data->cetakan_edisi }}">
                                                                         </div>
                                                                     </div>
@@ -169,7 +171,7 @@
                                                                             Terbit</label>
                                                                         <div class="col-md-8">
                                                                             <input type="text" class="form-control"
-                                                                                id="tempatterbit" name="tempatterbit" readonly
+                                                                                id="tempatterbit" name="tempatterbit"
                                                                                 value="{{ $data->tempat_terbit }}">
                                                                         </div>
                                                                     </div>
@@ -178,7 +180,7 @@
                                                                             class="col-md-4 col-form-label">Penerbit</label>
                                                                         <div class="col-md-8">
                                                                             <input type="text" class="form-control"
-                                                                                id="penerbit" name="penerbit" readonly
+                                                                                id="penerbit" name="penerbit"
                                                                                 value="{{ $data->penerbit }}">
                                                                         </div>
                                                                     </div>
@@ -189,7 +191,7 @@
                                                                         <div class="col-md-8">
                                                                             <input type="date" class="form-control"
                                                                                 id="tanggalpenetapan"
-                                                                                name="tanggalpenetapan" readonly
+                                                                                name="tanggalpenetapan"
                                                                                 value="{{ $data->tanggal_penetapan }}">
                                                                         </div>
                                                                     </div>
@@ -198,7 +200,7 @@
                                                                             class="col-md-4 col-form-label">Deskripsi
                                                                             Fisik</label>
                                                                         <div class="col-md-8">
-                                                                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" readonly>{{ $data->deskripsi_fisik }}</textarea>
+                                                                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4">{{ $data->deskripsi_fisik }}</textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="mb-3 row">
@@ -206,7 +208,7 @@
                                                                             class="col-md-4 col-form-label">Sumber</label>
                                                                         <div class="col-md-8">
                                                                             <input type="text" class="form-control"
-                                                                                id="sumber" name="sumber" readonly
+                                                                                id="sumber" name="sumber"
                                                                                 value="{{ $data->sumber }}">
                                                                         </div>
                                                                     </div>
@@ -215,7 +217,7 @@
                                                                             class="col-md-4 col-form-label">Subjek</label>
                                                                         <div class="col-md-8">
                                                                             <input type="text" class="form-control"
-                                                                                id="subjek" name="subjek" readonly
+                                                                                id="subjek" name="subjek"
                                                                                 value="{{ $data->subjek }}">
                                                                         </div>
                                                                     </div>
@@ -224,7 +226,7 @@
                                                                             class="col-md-4 col-form-label">ISBN</label>
                                                                         <div class="col-md-8">
                                                                             <input type="text" class="form-control"
-                                                                                id="isbn" name="isbn" readonly
+                                                                                id="isbn" name="isbn"
                                                                                 value="{{ $data->isbn }}">
                                                                         </div>
                                                                     </div>
@@ -233,7 +235,7 @@
                                                                             class="col-md-4 col-form-label">Status</label>
                                                                         <div class="col-md-8">
                                                                             <select class="form-select" id="sel2"
-                                                                                name="sellist2" disabled>
+                                                                                name="sellist2">
                                                                                 <option value=""selected disabled
                                                                                     hidden>
                                                                                     -- Pilih Status --</option>
@@ -251,7 +253,7 @@
                                                                             class="col-md-4 col-form-label">Bahasa</label>
                                                                         <div class="col-md-8">
                                                                             <input type="text" class="form-control"
-                                                                                id="bahasa" name="bahasa" readonly
+                                                                                id="bahasa" name="bahasa"
                                                                                 value="{{ $data->bahasa }}">
                                                                         </div>
                                                                     </div>
@@ -260,7 +262,7 @@
                                                                             class="col-md-4 col-form-label">Lokasi</label>
                                                                         <div class="col-md-8">
                                                                             <input type="text" class="form-control"
-                                                                                id="lokasi" name="lokasi" readonly
+                                                                                id="lokasi" name="lokasi"
                                                                                 value="{{ $data->lokasi }}">
                                                                         </div>
                                                                     </div>
@@ -268,14 +270,14 @@
                                                                         <label for="judul"
                                                                             class="col-md-4 col-form-label">Abstraksi</label>
                                                                         <div class="col-md-8">
-                                                                            <textarea class="form-control" id="abstraksi" name="abstraksi" rows="4" readonly>{{ $data->abstraksi }}</textarea>
+                                                                            <textarea class="form-control" id="abstraksi" name="abstraksi" rows="4">{{ $data->abstraksi }}</textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="mb-3 row">
                                                                         <label for="c"
                                                                             class="col-md-4 col-form-label">Catatan</label>
                                                                         <div class="col-md-8">
-                                                                            <textarea class="form-control" id="catatan" name="catatan" rows="4" readonly>{{ $data->catatan }}</textarea>
+                                                                            <textarea class="form-control" id="catatan" name="catatan" rows="4">{{ $data->catatan }}</textarea>
                                                                         </div>
                                                                     </div>
 
@@ -287,7 +289,8 @@
                                                                             class="col-md-4 col-form-label">File
                                                                             Peraturan</label>
                                                                         <div class="col-md-5 d-flex align-items-center">
-                                                                            <a href="/upload/{{ $data->file_peraturan }}" class="btn btn-primary">Lihat</a>
+                                                                            <a href="/upload/{{ $data->file_peraturan }}"
+                                                                                class="btn btn-primary">Lihat</a>
                                                                             {{-- <input type="file" id="fileperaturan"
                                                                                 name="fileperaturan"> --}}
 
@@ -299,7 +302,8 @@
                                                                             class="col-md-4 col-form-label">File
                                                                             Abstraksi</label>
                                                                         <div class="col-md-5 d-flex align-items-center">
-                                                                            <a href="/upload/{{ $data->file_abstraksi }}" class="btn btn-primary">Lihat</a>
+                                                                            <a href="/upload/{{ $data->file_abstraksi }}"
+                                                                                class="btn btn-primary">Lihat</a>
                                                                             {{-- <input type="file" id="fileabstraksi"
                                                                                 name="fileabstraksi"> --}}
 
@@ -307,6 +311,10 @@
                                                                     </div>
 
                                                                     <div class="d-flex justify-content-end">
+                                                                        <button type="button"
+                                                                            class="btn btn-success me-3 update_produkhukum">Simpan
+                                                                            Perubahan</button>
+
                                                                         <a href="/produkhukum"
                                                                             class="btn btn-warning">Kembali</a>
                                                                     </div>
@@ -347,14 +355,77 @@
 @endsection
 
 @section('script')
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
-        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
-
     <script>
         $(document).ready(function() {
             $('#sel0').val({{ $data->id_tahun }}).change();
             $('#sel1').val({{ $data->id_tipe }}).change();
             $('#sel2').val({{ $data->id_status }}).change();
+
+            $(document).on('click', '.update_produkhukum', function(e) {
+                e.preventDefault();
+                var id_produk = $('#id_produk').val();
+                var formData = new FormData();
+                formData.append('id_tahun', $('#sel0').val());
+                formData.append('id_tipe', $('#sel1').val());
+                formData.append('judul', $('#judul').val());
+                formData.append('badan_pengarang', $('#teu').val());
+                formData.append('no_peraturan', $('#noprt').val());
+                formData.append('no_panggil', $('#nopgl').val());
+                formData.append('jenis_bentuk_peraturan', $('#jenis').val());
+                formData.append('singkatan_jenis', $('#sjns').val());
+                formData.append('cetakan_edisi', $('#ctk').val());
+                formData.append('tempat_terbit', $('#tempatterbit').val());
+                formData.append('penerbit', $('#penerbit').val());
+                formData.append('tanggal_penetapan', $('#tanggalpenetapan').val());
+                formData.append('deskripsi_fisik', $('#deskripsi').val());
+                formData.append('sumber', $('#sumber').val());
+                formData.append('subjek', $('#subjek').val());
+                formData.append('isbn', $('#isbn').val());
+                formData.append('id_status', $('#sel2').val());
+                formData.append('bahasa', $('#bahasa').val());
+                formData.append('lokasi', $('#lokasi').val());
+                formData.append('abstraksi', $('#abstraksi').val());
+                formData.append('catatan', $('#catatan').val());
+                // formData.append('file_peraturan', $('#fileperaturan')[0].files[0]);
+                // formData.append('file_abstraksi', $('#fileabstraksi')[0].files[0]);
+                // alert(data)
+                // console.log(data);
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    type: "post",
+                    url: "/produk/update/" + id_produk,
+                    data: formData,
+                    dataType: "json",
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        console.log(response);
+                        if (response.status == 400) {
+                            $('#saveform_errList').html("");
+                            $('#saveform_errList').addClass('alert alert-danger');
+                            $.each(response.errors, function(key, err_values) {
+                                $('#saveform_errList').append('<li>' + err_values +
+                                    '</li>');
+                            });
+                        } else {
+                            $('#saveform_errList').html("");
+                            $('#success_message').addClass('alert alert-success')
+                            $('#success_message').text(response.message)
+                            // window.location.href = "{{ route('menu.produkhukum') }}";
+                            window.location.href ="/produkhukum";
+
+
+                        }
+                    }
+                });
+
+
+            });
         });
     </script>
 @endsection
