@@ -31,7 +31,7 @@
                                         class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ms-10 mb-4">
                                         <h1
                                             class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                                            Tambah Produk Hukum</h1>
+                                            Lihat Produk Hukum</h1>
                                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                             <li class="breadcrumb-item text-muted">
                                                 <a href="../../demo1/dist/index.html"
@@ -44,7 +44,7 @@
                                             <li class="breadcrumb-item">
                                                 <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                             </li>
-                                            <li class="breadcrumb-item text-muted">Tambah Produk Hukum</li>
+                                            <li class="breadcrumb-item text-muted">Lihat Produk Hukum</li>
                                         </ul>
                                     </div>
                                 </div>
