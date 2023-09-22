@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    FAQ
+     FAQ
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
-                    <a href="{{ route('faq') }}"></a>
+                    <a href="{{ route('dasbor') }}"></a>
                     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
                         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
                             <div class="d-flex flex-column flex-column-fluid">
@@ -21,7 +21,7 @@
                                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                                             <h1
                                                 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                                                Kegiatan Hukum</h1>
+                                                 FAQ</h1>
                                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                                 <li class="breadcrumb-item text-muted">
                                                     <a href="../../demo1/dist/index.html"
@@ -30,7 +30,7 @@
                                                 <li class="breadcrumb-item">
                                                     <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                                 </li>
-                                                <li class="breadcrumb-item text-muted">Kegiatan Hukum</li>
+                                                <li class="breadcrumb-item text-muted">FAQ Hukum</li>
                                             </ul>
                                         </div>
                                         <div class="col-md-2">
@@ -50,8 +50,8 @@
 
                                                 </h3>
                                                 <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                    data-bs-trigger="hover" title="Klik untuk tambah kegiatan">
-                                                    <a href="{{ route('menu.tambahkegiatan') }}"
+                                                    data-bs-trigger="hover" title="Klik untuk tambah FAQ">
+                                                    <a href="{{ route('menu.faq') }}"
                                                         class="btn btn-sm btn-light btn-primary">
                                                         <span class="svg-icon svg-icon-3">
                                                             <svg width="24" height="24" viewBox="0 0 24 24"
@@ -64,7 +64,7 @@
                                                                     height="2" rx="1" fill="currentColor" />
                                                             </svg>
                                                         </span>
-                                                        Kegiatan</a>
+                                                        FAQ</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -79,23 +79,12 @@
                                                         class="table table-striped table-row-bordered gy-5 gs-7 border rounded ">
                                                         <thead>
                                                             <tr class="fw-bold fs-6 text-gray-800 px-7">
-                                                                <th>TIPE KEGIATAN</th>
-                                                                <th>JUDUL</th>
+                                                                <th>PERTANYAAN</th>
+                                                                <th>JAWABAN</th>
                                                                 <th>STATUS</th>
-                                                                <th>DETAIL</th>
+                                                                <th>AKSI</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
-                                                            @foreach ($kegiatanhukum as $data)
-                                                                <tr>
-                                                                    <td>{{ $data->tipe_kegiatan }}</td>
-                                                                    <td>{{ $data->judul }}</td>
-                                                                    <td>{{ $data->status }}</td>
-                                                                    <td><button type="button"
-                                                                            class="btn btn-primary">Lihat</button></td>
-                                                                </tr>
-                                                            @endforeach
-                                                        </tbody>
                                                     </table>
                                                 </div>
                                             </div>
