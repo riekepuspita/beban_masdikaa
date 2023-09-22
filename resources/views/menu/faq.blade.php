@@ -51,7 +51,7 @@
                                                 </h3>
                                                 <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top"
                                                     data-bs-trigger="hover" title="Klik untuk tambah FAQ">
-                                                    <a href="{{ route('menu.faq') }}"
+                                                    <a href="{{ route('menu.tambahfaq') }}"
                                                         class="btn btn-sm btn-light btn-primary">
                                                         <span class="svg-icon svg-icon-3">
                                                             <svg width="24" height="24" viewBox="0 0 24 24"

@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    FAQ
+    Kegiatan Hukum
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
-                    <a href="{{ route('faq') }}"></a>
+                    <a href="{{ route('dasbor') }}"></a>
                     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
                         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
                             <div class="d-flex flex-column flex-column-fluid">

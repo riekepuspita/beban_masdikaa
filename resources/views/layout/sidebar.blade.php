@@ -168,7 +168,7 @@
                 <!--begin:Menu item-->
                 <div class="menu-item menu-accordion">
                     <!--begin:Menu link-->
-                    <span class="menu-link">
+                    <a class="menu-link" href="{{ route('menu.faq') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/docs/metronic/html/releases/2023-07-21-074234/core/html/src/media/icons/duotune/files/fil003.svg-->
                             <span class="svg-icon svg-icon-muted svg-icon-2hx">
@@ -183,7 +183,7 @@
                             <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">FAQ</span>
-                    </span>
+                    </a>
                     <!--end:Menu link-->
                 </div>
                 <!--end:Menu item-->
