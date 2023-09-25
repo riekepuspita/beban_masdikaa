@@ -33,24 +33,13 @@
                                                 <li class="breadcrumb-item text-muted">Kegiatan Hukum</li>
                                             </ul>
                                         </div>
-                                        <div class="col-md-2">
-                                            <select class="form-select" id="sel1" name="sellist1">
-                                                <option value=""selected disabled hidden>Tipe Kegiatan
-                                                </option>
-                                                <option> Sosialisasi Produk Hukum </option>
-                                                <option> Konsultasi Publik </option>
-                                                <option> Pembinaan / Penyuluhan </option>
-                                                <option> Rapat</option>
-                                                <option> Lain - lain </option>
-                                            </select>
-                                        </div>
                                         <div class="d-flex align-items-center gap-2 gap-lg-3">
                                             <div class="card-header border-0 pt-5">
                                                 <h3 class="card-title align-items-start flex-column">
 
                                                 </h3>
                                                 <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                    data-bs-trigger="hover" title="Klik untuk tambah kegiatan">
+                                                    data-bs-trigger="hover" title="Klik untuk tambah kegiatan hukum">
                                                     <a href="{{ route('menu.tambahkegiatan') }}"
                                                         class="btn btn-sm btn-light btn-primary">
                                                         <span class="svg-icon svg-icon-3">
@@ -64,7 +53,7 @@
                                                                     height="2" rx="1" fill="currentColor" />
                                                             </svg>
                                                         </span>
-                                                        Kegiatan</a>
+                                                        Kegiatan Hukum</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -75,24 +64,34 @@
                                         <div class="card mb-5 mb-xl-8">
                                             <div class="card-body py-3">
                                                 <div class="table-responsive">
-                                                    <table id="kt_datatable_dom_positioning"
-                                                        class="table table-striped table-row-bordered gy-5 gs-7 border rounded ">
-                                                        <thead>
-                                                            <tr class="fw-bold fs-6 text-gray-800 px-7">
-                                                                <th>TIPE KEGIATAN</th>
-                                                                <th>JUDUL</th>
-                                                                <th>STATUS</th>
-                                                                <th>DETAIL</th>
-                                                            </tr>
-                                                        </thead>
+                                                    <div class="col-md-3 offset-md-9">
+                                            <select class="form-select" id="filterkeg" name="filterkeg">
+                                                <option value="semua" selected>
+                                                    Semua Tipe Kegiatan</option>
+                                                @foreach ($filterkh as $filterkh)
+                                                    <option value="{{ $filterkh->nama_tipe_kegiatan }}">
+                                                        {{ $filterkh->nama_tipe_kegiatan }} </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <table id="kt_datatable_dom_positioning"
+                                            class="table table-striped table-row-bordered gy-5 gs-7 border rounded ">
+                                            <thead>
+                                                <tr class="fw-bold fs-6 text-gray-800 px-7">
+                                                    <th>TIPE KEGIATAN</th>
+                                                    <th>JUDUL</th>
+                                                    <th>STATUS</th>
+                                                    <th>DETAIL</th>
+                                                </tr>
+                                            </thead>
                                                         <tbody>
                                                             @foreach ($kegiatanhukum as $data)
                                                                 <tr>
-                                                                    <td>{{ $data->tipe_kegiatan }}</td>
+                                                                    <td>{{ $data->relasi_id_tipe_kegiatan->nama_tipe_kegiatan }}</td>
                                                                     <td>{{ $data->judul }}</td>
-                                                                    <td>{{ $data->status }}</td>
-                                                                    <td><button type="button"
-                                                                            class="btn btn-primary">Lihat</button></td>
+                                                                    <td>{{ $data->relasi_id_status_keg->status_keg }}</td>
+                                                                    <td><a class="btn btn-primary">Lihat</a>
+                                                                    </td>
                                                                 </tr>
                                                             @endforeach
                                                         </tbody>
@@ -145,5 +144,37 @@
                 "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
                 ">"
         });
+
+        // Filter tipe dokumen
+        $('#filter_kegiatan').on('change', function() {
+            var selVal = $(this).val();
+            if (selVal === 'semua') {
+                table.column(1).search('').draw();
+            } else {
+                table.column(1).search(selVal).draw();
+            }
+        })
+        
+
+        function filterTable() {
+            // Variables
+            let dropdown, table, rows, cells, country, filter;
+            dropdown = document.getElementById("sel1");
+            table = document.getElementById("kt_datatable_dom_positioning");
+            rows = table.getElementsByTagName("tr");
+            filter = dropdown.value;
+
+            // Loops through rows and hides those with countries that don't match the filter
+            for (let row of rows) { // `for...of` loops through the NodeList
+                cells = row.getElementsByTagName("td");
+                country = cells[1] || null; // gets the 2nd `td` or nothing
+                // if the filter is set to 'All', or this is the header row, or 2nd `td` text matches filter
+                if (filter === "All" || !country || (filter === country.textContent)) {
+                    row.style.display = ""; // shows this row
+                } else {
+                    row.style.display = "none"; // hides this row
+                }
+            }
+        }
     </script>
 @endsection
