@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Informasi Hukum
+    Infromasi Hukum
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
-                    <a href="{{ route('dasbor') }}"></a>              
+                    <a href="{{ route('dasbor') }}"></a>
                     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
                         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
                             <div class="d-flex flex-column flex-column-fluid">
@@ -29,27 +29,17 @@
                                                 </li>
                                                 <li class="breadcrumb-item">
                                                     <span class="bullet bg-gray-400 w-5px h-2px"></span>
-                                                </li>           
+                                                </li>
                                                 <li class="breadcrumb-item text-muted">Informasi Hukum</li>
                                             </ul>
                                         </div>
-                                        <div class="col-md-2">
-                                            <select class="form-select" id="sel1" name="sellist1">
-                                                <option value=""selected disabled hidden>Tipe Informasi
-                                                </option>
-                                                <option> Artikel Hukum </option>
-                                                <option> Monografi Hukum </option>
-                                                <option> Yurisprudensi </option>
-                                                <option> Perjanjian </option>
-                                                <option> Berita Hukum </option>
-                                            </select>
-                                        </div>
                                         <div class="d-flex align-items-center gap-2 gap-lg-3">
                                             <div class="card-header border-0 pt-5">
-                                                <h3 class="card-title align-items-start flex-column"></h3>
+                                                <h3 class="card-title align-items-start flex-column">
 
+                                                </h3>
                                                 <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                    data-bs-trigger="hover" title="Klik untuk tambah informasi">
+                                                    data-bs-trigger="hover" title="Klik untuk tambah infromasi hukum">
                                                     <a href="{{ route('menu.tambahinformasi') }}"
                                                         class="btn btn-sm btn-light btn-primary">
                                                         <span class="svg-icon svg-icon-3">
@@ -63,7 +53,7 @@
                                                                     height="2" rx="1" fill="currentColor" />
                                                             </svg>
                                                         </span>
-                                                    Informasi</a>
+                                                        Infromasi Hukum</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,6 +64,18 @@
                                         <div class="card mb-5 mb-xl-8">
                                             <div class="card-body py-3">
                                                 <div class="table-responsive">
+                                                    <div class="col-md-3 offset-md-9">
+
+                                                        <select class="form-select" id="filter" name="filter">
+                                                            <option value="semua" selected>
+                                                                Semua Tipe Infromasi</option>
+                                                            @foreach ($filterih as $filterih)
+                                                                <option value="{{ $filterih->nama_tipe_info }}">
+                                                                    {{ $filterih->nama_tipe_info }} </option>
+                                                            @endforeach
+                                                        </select>
+
+                                                    </div>
                                                     <table id="kt_datatable_dom_positioning"
                                                         class="table table-striped table-row-bordered gy-5 gs-7 border rounded ">
                                                         <thead>
@@ -87,10 +89,11 @@
                                                         <tbody>
                                                             @foreach ($informasihukum as $data)
                                                                 <tr>
-                                                                    <td>{{ $data->tipe_informasi }}</td>
+                                                                    <td>{{ $data->relasi_id_tipe_info->nama_tipe_info }}</td>
                                                                     <td>{{ $data->judul }}</td>
-                                                                    <td>{{ $data->status }}</td>
-                                                                    <td><button type="button" class="btn btn-primary">Lihat</button></td>
+                                                                    <td>{{ $data->relasi_id_status_info->status_info }}</td>
+                                                                    <td><a  class="btn btn-primary">Lihat</a>
+                                                                    </td>
                                                                 </tr>
                                                             @endforeach
                                                         </tbody>
@@ -127,7 +130,7 @@
 
 @section('script')
     <script>
-        $("#kt_datatable_dom_positioning").DataTable({
+        var table = $("#kt_datatable_dom_positioning").DataTable({
             "language": {
                 "lengthMenu": "Show _MENU_",
             },
@@ -143,5 +146,36 @@
                 "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
                 ">"
         });
+
+        // Filter tipe dokumen
+        $('#filter').on('change', function() {
+            var selVal = $(this).val();
+            if (selVal === 'semua') {
+                table.column(1).search('').draw();
+            } else {
+                table.column(1).search(selVal).draw();
+            }
+        })
+
+        function filterTable() {
+            // Variables
+            let dropdown, table, rows, cells, country, filter;
+            dropdown = document.getElementById("sel1");
+            table = document.getElementById("kt_datatable_dom_positioning");
+            rows = table.getElementsByTagName("tr");
+            filter = dropdown.value;
+
+            // Loops through rows and hides those with countries that don't match the filter
+            for (let row of rows) { // `for...of` loops through the NodeList
+                cells = row.getElementsByTagName("td");
+                country = cells[1] || null; // gets the 2nd `td` or nothing
+                // if the filter is set to 'All', or this is the header row, or 2nd `td` text matches filter
+                if (filter === "All" || !country || (filter === country.textContent)) {
+                    row.style.display = ""; // shows this row
+                } else {
+                    row.style.display = "none"; // hides this row
+                }
+            }
+        }
     </script>
 @endsection
