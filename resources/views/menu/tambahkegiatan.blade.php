@@ -114,8 +114,8 @@
 
                                                                     <button type="button"
                                                                         class="btn btn-success me-3   ">Simpan</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger ms-3">Batal</button>
+                                                                    <a href="/kegiatanhukum"
+                                                                        class="btn btn-danger ms-3">Batal</a>
                                                                 </div>
 
 
