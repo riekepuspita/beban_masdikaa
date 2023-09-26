@@ -161,8 +161,18 @@
                         </h1>
                         <!--end::Title-->
                         <!--begin::Action-->
-                        <a href="../../demo1/dist/index.html" class="btn btn-primary">Try Metronic</a>
-                        <a class="btn btn-primary ms-3">Button</a>
+                        <a href="../../demo1/dist/index.html" class="btn btn-primary">Peraturan Daerah</a>
+                        <a class="btn btn-primary ms-3">Peraturan Bupati</a>
+                        <a class="btn btn-primary ms-3">Keputusan Bupati</a>
+                        <a class="btn btn-primary ms-3">Instruksi Bupati</a>
+                        <a class="btn btn-primary ms-3">Peraturan Desa</a>
+                        <a class="btn btn-primary ms-3">Peraturan Bersama Bupati</a>
+                        <br>
+                        <br>
+                        <a class="btn btn-primary ms-3">Peraturan Bersama Kepala Desa</a>
+                        <a class="btn btn-primary ms-3">Peraturan Kepala Desa</a>
+                        <a class="btn btn-primary ms-3">Rancangan Peraturan Bupati</a>
+                        <a class="btn btn-primary ms-3">Rancangan Peraturan Daerah</a>
                         <!--end::Action-->
                     </div>
                     <!--end::Heading-->
