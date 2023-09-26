@@ -60,6 +60,11 @@ Route::get('tambahfaq', function () {
     return view('menu.tambahfaq');
 })->name('menu.tambahfaq');
 
+Route::get('landingpage', function () {
+    return view('landing.landingpage');
+})->name('landing.landingpage');
+
+
 Route::get('informasihukum', [informasihukumController::class, 'index'])->name('menu.informasihukum');
 Route::get('produkhukum', [produkhukumController::class, 'index'])->name('menu.produkhukum');
 Route::get('kegiatanhukum', [kegiatanhukumController::class, 'index'])->name('menu.kegiatanhukum');
