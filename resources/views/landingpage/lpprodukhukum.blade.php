@@ -268,199 +268,46 @@
                 <!--begin::Heading-->
                 <div class="text-center mb-17">
                     <!--begin::Title-->
-                    <h3 class="fs-2hx text-dark mb-5" id="clients"
-                        data-kt-scroll-offset="{default: 125, lg: 150}">What Our Clients Say</h3>
-                    <!--end::Title-->
-                    <!--begin::Description-->
-                    <div class="fs-5 text-muted fw-bold">Save thousands to millions of bucks by using single tool
-                        <br />for different amazing and great useful admin
-                    </div>
-                    <!--end::Description-->
+                    <table id="kt_datatable_dom_positioning"
+                        class="table table-striped table-row-bordered gy-5 gs-7 border rounded ">
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800 px-7">
+                                <th>TAHUN</th>
+                                <th>TIPE DOKUMEN</th>
+                                <th>JUDUL</th>
+                                <th>STATUS</th>
+                                <th>DETAIL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if(isset($produkhukum) && count($produkhukum) > 0)
+                            @foreach ($produkhukum as $data)
+                                <tr>
+                                    <td>{{ $data->relasi_id_tahun->tahun }}</td>
+                                    <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
+                                    <td>{{ $data->judul }}</td>
+                                    <td>{{ $data->relasi_id_status->status }}</td>
+                                    <td><a href="produk/{{ $data->id }}" class="btn btn-primary">Lihat</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            @endif
+                        </tbody>
+                    </table>
+                   <br> 
+                   <br> 
+                   <br> 
+                   <br> 
+                   <br> 
+                   <br> 
+                   <br> 
+                   <br> 
+                   <br> 
+                   <br> 
+                   <br> 
+                   <br> 
+                                
                 </div>
-                <!--end::Heading-->
-                <!--begin::Row-->
-                <div class="row g-lg-10 mb-10 mb-lg-20">
-                    <!--begin::Col-->
-                    <div class="col-lg-4">
-                        <!--begin::Testimonial-->
-                        <div
-                            class="d-flex flex-column justify-content-between h-lg-100 px-10 px-lg-0 pe-lg-10 mb-15 mb-lg-0">
-                            <!--begin::Wrapper-->
-                            <div class="mb-7">
-                                <!--begin::Rating-->
-                                <div class="rating mb-6">
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                </div>
-                                <!--end::Rating-->
-                                <!--begin::Title-->
-                                <div class="fs-2 fw-bold text-dark mb-3">This is by far the cleanest template
-                                    <br />and the most well structured
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Feedback-->
-                                <div class="text-gray-500 fw-semibold fs-4">The most well thought out design theme I
-                                    have ever used. The codes are up to tandard. The css styles are very clean. In fact
-                                    the cleanest and the most up to standard I have ever seen.</div>
-                                <!--end::Feedback-->
-                            </div>
-                            <!--end::Wrapper-->
-                            <!--begin::Author-->
-                            <div class="d-flex align-items-center">
-                                <!--begin::Avatar-->
-                                <div class="symbol symbol-circle symbol-50px me-5">
-                                    <img src="{{ asset('/media/avatars/300-1.jpg') }}" class=""
-                                        alt="" />
-                                </div>
-                                <!--end::Avatar-->
-                                <!--begin::Name-->
-                                <div class="flex-grow-1">
-                                    <a href="#" class="text-dark fw-bold text-hover-primary fs-6">Paul
-                                        Miles</a>
-                                    <span class="text-muted d-block fw-bold">Development Lead</span>
-                                </div>
-                                <!--end::Name-->
-                            </div>
-                            <!--end::Author-->
-                        </div>
-                        <!--end::Testimonial-->
-                    </div>
-                    <!--end::Col-->
-                    <!--begin::Col-->
-                    <div class="col-lg-4">
-                        <!--begin::Testimonial-->
-                        <div
-                            class="d-flex flex-column justify-content-between h-lg-100 px-10 px-lg-0 pe-lg-10 mb-15 mb-lg-0">
-                            <!--begin::Wrapper-->
-                            <div class="mb-7">
-                                <!--begin::Rating-->
-                                <div class="rating mb-6">
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                </div>
-                                <!--end::Rating-->
-                                <!--begin::Title-->
-                                <div class="fs-2 fw-bold text-dark mb-3">This is by far the cleanest template
-                                    <br />and the most well structured
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Feedback-->
-                                <div class="text-gray-500 fw-semibold fs-4">The most well thought out design theme I
-                                    have ever used. The codes are up to tandard. The css styles are very clean. In fact
-                                    the cleanest and the most up to standard I have ever seen.</div>
-                                <!--end::Feedback-->
-                            </div>
-                            <!--end::Wrapper-->
-                            <!--begin::Author-->
-                            <div class="d-flex align-items-center">
-                                <!--begin::Avatar-->
-                                <div class="symbol symbol-circle symbol-50px me-5">
-                                    <img src="{{ asset('/media/avatars/300-2.jpg') }}" class=""
-                                        alt="" />
-                                </div>
-                                <!--end::Avatar-->
-                                <!--begin::Name-->
-                                <div class="flex-grow-1">
-                                    <a href="#" class="text-dark fw-bold text-hover-primary fs-6">Janya
-                                        Clebert</a>
-                                    <span class="text-muted d-block fw-bold">Development Lead</span>
-                                </div>
-                                <!--end::Name-->
-                            </div>
-                            <!--end::Author-->
-                        </div>
-                        <!--end::Testimonial-->
-                    </div>
-                    <!--end::Col-->
-                    <!--begin::Col-->
-                    <div class="col-lg-4">
-                        <!--begin::Testimonial-->
-                        <div
-                            class="d-flex flex-column justify-content-between h-lg-100 px-10 px-lg-0 pe-lg-10 mb-15 mb-lg-0">
-                            <!--begin::Wrapper-->
-                            <div class="mb-7">
-                                <!--begin::Rating-->
-                                <div class="rating mb-6">
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                    <div class="rating-label me-2 checked">
-                                        <i class="bi bi-star-fill fs-5"></i>
-                                    </div>
-                                </div>
-                                <!--end::Rating-->
-                                <!--begin::Title-->
-                                <div class="fs-2 fw-bold text-dark mb-3">This is by far the cleanest template
-                                    <br />and the most well structured
-                                </div>
-                                <!--end::Title-->
-                                <!--begin::Feedback-->
-                                <div class="text-gray-500 fw-semibold fs-4">The most well thought out design theme I
-                                    have ever used. The codes are up to tandard. The css styles are very clean. In fact
-                                    the cleanest and the most up to standard I have ever seen.</div>
-                                <!--end::Feedback-->
-                            </div>
-                            <!--end::Wrapper-->
-                            <!--begin::Author-->
-                            <div class="d-flex align-items-center">
-                                <!--begin::Avatar-->
-                                <div class="symbol symbol-circle symbol-50px me-5">
-                                    <img src="{{ asset('/media/avatars/300-16.jpg') }}" class=""
-                                        alt="" />
-                                </div>
-                                <!--end::Avatar-->
-                                <!--begin::Name-->
-                                <div class="flex-grow-1">
-                                    <a href="#" class="text-dark fw-bold text-hover-primary fs-6">Steave
-                                        Brown</a>
-                                    <span class="text-muted d-block fw-bold">Development Lead</span>
-                                </div>
-                                <!--end::Name-->
-                            </div>
-                            <!--end::Author-->
-                        </div>
-                        <!--end::Testimonial-->
-                    </div>
-                    <!--end::Col-->
-                </div>
-                <!--end::Row-->
-                <!--begin::Highlight-->
-                
                 <!--end::Highlight-->
             </div>
             <!--end::Container-->
@@ -1530,6 +1377,10 @@
 </html>
 
 @section('script')
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
+
     <script>
         var defaultThemeMode = "light";
         var themeMode;
@@ -1548,5 +1399,30 @@
             }
             document.documentElement.setAttribute("data-theme", themeMode);
         }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+        $('#myDataTable').DataTable();
+        });    
+    </script>
+
+    <script>
+    var table = $("#kt_datatable_dom_positioning").DataTable({
+            "language": {
+                "lengthMenu": "Show _MENU_",
+            },
+            "dom": "<'row'" +
+                "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+                "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+                ">" +
+
+                "<'table-responsive'tr>" +
+
+                "<'row'" +
+                "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+                "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+                ">"
+        });     
     </script>
 @endsection

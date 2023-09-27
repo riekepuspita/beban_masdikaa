@@ -208,4 +208,17 @@ class produkhukumController extends Controller
             ]);
         }
     }
+
+    public function lpprodukhukum($id)
+    {
+        $data = ProdukHukum::find($id);
+        $produkhukum = ProdukHukum::all();
+        $tipe_dokumen = TipeDokumen::all();
+        $status = Status::all();
+        $tahun = Tahun::all();
+        return view('landingpage.lpprodukhukum', ['data' => $data, 'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun]);
+
+        // dd($produkhukum);
+    }
+
 }
