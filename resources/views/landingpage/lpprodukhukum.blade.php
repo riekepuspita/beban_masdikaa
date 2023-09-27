@@ -338,7 +338,7 @@
                                 <h2 class="text-white">Lokasi</h2>
                                 <!--end::Title-->
                                 <!--begin::Text-->
-                                <span class="fw-normal fs-4 text-gray-700">Menampilkan Peta dan Alamat
+                                <span class="fw-normal fs-4 text-gray-700"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63268.547042251244!2d111.26932904664623!3d-7.652560444976269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79922da09b91f7%3A0xfbda3bb4e910956e!2sKantor%20Bupati%20Magetan!5e0!3m2!1sid!2sid!4v1695781485485!5m2!1sid!2sid" width="540" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     <a href="https://keenthemes.com/support"
                                         class="text-white opacity-50 text-hover-primary"></a></span>
                                 <!--end::Text-->
