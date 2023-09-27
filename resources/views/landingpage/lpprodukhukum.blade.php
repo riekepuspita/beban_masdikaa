@@ -270,7 +270,7 @@
                     <!--begin::Title-->
                     <div class="card">
                         <div class="card-body p-4" style="background-color: #001f3f; color: #fff;">
-                            <form method="get" id="searchForm" class="mb-0" action="/Search">
+                            <form method="get" id="searchForm" class="mb-0" action="/search">
                                 <div class="row g-6 g-xl-9">
                                     <div class="col-lg-7">
                                         <div class="position-relative">

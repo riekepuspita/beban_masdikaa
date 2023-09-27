@@ -211,14 +211,14 @@ class produkhukumController extends Controller
 
     public function search(Request $request)
     {
-        $produkhukum = $request->input('judul');
+        $keyword = $request->input('judul');
 
         // Lakukan pencarian data sesuai dengan kriteria
-        $produk_hukum = ProdukHukum::where('judul', 'like', '%' . $produkhukum . '%')
+        $produk_hukum = ProdukHukum::where('judul', 'like', '%' . $keyword . '%')
             ->get();
 
         // Kirim hasil pencarian ke tampilan
-        return($produkhukum);
+        // return($produkhukum);
         return view('landingpage.lpprodukhukum', ['produk_hukum' => $produk_hukum]);
 
     }
