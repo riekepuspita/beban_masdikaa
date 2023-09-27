@@ -281,13 +281,13 @@
                                                 </span>
                                                 <!--end::Svg Icon-->
                                             </div>
-                                            <input type="text" class="form-control form-control-solid ps-12" name="keywords" value="" placeholder="Search" fdprocessedid="eq4xqo">
+                                            <input type="text" class="form-control form-control-solid ps-12" name="judul" value="" placeholder="Search" fdprocessedid="eq4xqo">
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="row">
                                             <div class="col-6 d-grid">
-                                                <button type="submit" class="btn btn-primary" fdprocessedid="ti1778">Search</button>
+                                                <button type="submit" class="btn btn-primary " fdprocessedid="ti1778">Search</button>
                                             </div>
                                         </div>
                                     </div>
@@ -310,6 +310,35 @@
                                 </div>
                                 <!--end::Advance form-->
                             </form>
+                            @if(isset($produk_hukum) && count($produk_hukum) > 0)
+                            
+                            <table id="kt_datatable_dom_positioning"
+
+                                                        class="table table-striped table-row-bordered gy-5 gs-7 border rounded ">
+                                                        <thead>
+                                                            <tr class="fw-bold fs-6 text-gray-800 px-7">
+                                                                <th>TAHUN</th>
+                                                                <th>TIPE DOKUMEN</th>
+                                                                <th>JUDUL</th>
+                                                                <th>STATUS</th>
+                                                                <th>DETAIL</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach ($produk_hukum as $data)
+                                                                <tr>
+                                                                    <td>{{ $data->relasi_id_tahun->tahun }}</td>
+                                                                    <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
+                                                                    <td>{{ $data->judul }}</td>
+                                                                    <td>{{ $data->relasi_id_status->status }}</td>
+                                                                    <td><a href="produk/{{ $data->id }}" class="btn btn-primary">Lihat</a>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                    
+                                                    @endif
                         </div>
                     </div>
                    <br> 
