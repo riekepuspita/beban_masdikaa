@@ -268,32 +268,50 @@
                 <!--begin::Heading-->
                 <div class="text-center mb-17">
                     <!--begin::Title-->
-                    <table id="kt_datatable_dom_positioning"
-                        class="table table-striped table-row-bordered gy-5 gs-7 border rounded ">
-                        <thead>
-                            <tr class="fw-bold fs-6 text-gray-800 px-7">
-                                <th>TAHUN</th>
-                                <th>TIPE DOKUMEN</th>
-                                <th>JUDUL</th>
-                                <th>STATUS</th>
-                                <th>DETAIL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if(isset($produkhukum) && count($produkhukum) > 0)
-                            @foreach ($produkhukum as $data)
-                                <tr>
-                                    <td>{{ $data->relasi_id_tahun->tahun }}</td>
-                                    <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
-                                    <td>{{ $data->judul }}</td>
-                                    <td>{{ $data->relasi_id_status->status }}</td>
-                                    <td><a href="produk/{{ $data->id }}" class="btn btn-primary">Lihat</a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            @endif
-                        </tbody>
-                    </table>
+                    <div class="card">
+                        <div class="card-body p-4" style="background-color: #001f3f; color: #fff;">
+                            <form method="get" id="searchForm" class="mb-0" action="/Search">
+                                <div class="row g-6 g-xl-9">
+                                    <div class="col-lg-7">
+                                        <div class="position-relative">
+                                            <div class="position-absolute translate-middle-y top-50 start-0 ms-5 me-3">
+                                                <!--begin::Svg Icon | path: icons/duotune/finance/fin002.svg-->
+                                                <span class="svg-icon svg-icon-2hx">
+                                                    <i class="bi bi-search"></i>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </div>
+                                            <input type="text" class="form-control form-control-solid ps-12" name="keywords" value="" placeholder="Search" fdprocessedid="eq4xqo">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="row">
+                                            <div class="col-6 d-grid">
+                                                <button type="submit" class="btn btn-primary" fdprocessedid="ti1778">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <!--begin::Advance form-->
+                                <div class="collapse" id="kt_advanced_search_form">
+                                    <!--begin::Separator-->
+                                    <div class="separator separator-dashed mt-9 mb-6"></div>
+                                    <!--end::Separator-->
+                                    <!--begin::Row-->
+                                    <div class="row g-8 mb-8">
+                                        <!--begin::Col-->
+                                        
+                                            <!--end::Select-->
+                                        </div>
+                                        <!--end::Col-->
+                                    </div>
+                                    <!--end::Row-->
+                                </div>
+                                <!--end::Advance form-->
+                            </form>
+                        </div>
+                    </div>
                    <br> 
                    <br> 
                    <br> 
