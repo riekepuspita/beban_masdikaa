@@ -76,6 +76,22 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="mb-3 row">
+                                                                    <label for="sel2"
+                                                                        class="col-md-4 col-form-label">Tag</label>
+                                                                    <div class="col-md-8">
+                                                                        <select class="form-select" id="sel3"
+                                                                            name="sellist3">
+                                                                            <option value=""selected disabled hidden>
+                                                                                -- Pilih Tag --</option>
+                                                                            @foreach ($tag_src_produkhukum as $tag_src_produkhukum)
+                                                                                <option value="{{ $tag_src_produkhukum->id_tag }}">
+                                                                                    {{ $tag_src_produkhukum->nama_tag }}
+                                                                                </option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-3 row">
                                                                     <label for="sel1"
                                                                         class="col-md-4 col-form-label">Tipe
                                                                         Dokumen</label>
@@ -95,8 +111,6 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="mb-3 mt-3">
-
                                                                     <div class="mb-3 row">
                                                                         <label for="judul"
                                                                             class="col-md-4 col-form-label">Judul</label>
@@ -359,6 +373,7 @@
         $(document).ready(function() {
             $('#sel0').val({{ $data->id_tahun }}).change();
             $('#sel1').val({{ $data->id_tipe }}).change();
+            $('#sel3').val({{ $data->id_tag }}).change();
             $('#sel2').val({{ $data->id_status }}).change();
 
             $(document).on('click', '.update_produkhukum', function(e) {
@@ -366,6 +381,7 @@
                 var id_produk = $('#id_produk').val();
                 var formData = new FormData();
                 formData.append('id_tahun', $('#sel0').val());
+                formData.append('id_tag', $('#sel3').val());
                 formData.append('id_tipe', $('#sel1').val());
                 formData.append('judul', $('#judul').val());
                 formData.append('badan_pengarang', $('#teu').val());

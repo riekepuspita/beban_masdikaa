@@ -74,6 +74,22 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="mb-3 row">
+                                                                    <label for="sel2"
+                                                                        class="col-md-4 col-form-label">Tag</label>
+                                                                    <div class="col-md-8">
+                                                                        <select class="form-select" id="sel2"
+                                                                            name="sellist2">
+                                                                            <option value=""selected disabled hidden>
+                                                                                -- Pilih Tag --</option>
+                                                                            @foreach ($tag_src_produkhukum as $tag_src_produkhukum)
+                                                                                <option value="{{ $tag_src_produkhukum->id_tag }}">
+                                                                                    {{ $tag_src_produkhukum->nama_tag }}
+                                                                                </option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-3 row">
                                                                     <label for="sel1"
                                                                         class="col-md-4 col-form-label">Tipe
                                                                         Dokumen</label>
@@ -364,6 +380,7 @@
                 e.preventDefault();
                 var formData = new FormData();
                 formData.append('id_tahun', $('#sel0').val());
+                formData.append('id_tag', $('#sel2').val());
                 formData.append('id_tipe', $('#sel1').val());
                 formData.append('judul', $('#judul').val());
                 formData.append('badan_pengarang', $('#teu').val());

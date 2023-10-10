@@ -81,6 +81,7 @@
                                                         <thead>
                                                             <tr class="fw-bold fs-6 text-gray-800 px-7">
                                                                 <th>TAHUN</th>
+                                                                <th>TAG</th>
                                                                 <th>TIPE DOKUMEN</th>
                                                                 <th>JUDUL</th>
                                                                 <th>STATUS</th>
@@ -91,6 +92,7 @@
                                                             @foreach ($produkhukum as $data)
                                                                 <tr>
                                                                     <td>{{ $data->relasi_id_tahun->tahun }}</td>
+                                                                    <td>{{ $data->relasi_id_tag->nama_tag }}</td>
                                                                     <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
                                                                     <td>{{ $data->judul }}</td>
                                                                     <td>{{ $data->relasi_id_status->status }}</td>

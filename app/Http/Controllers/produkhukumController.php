@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ProdukHukum;
 use App\Models\Status;
+use App\Models\TagSrcProdukHukum;
 use App\Models\TipeDokumen;
 use App\Models\Tahun;
 // use GuzzleHttp\Psr7\Request;
@@ -32,9 +33,10 @@ class produkhukumController extends Controller
         $tipe_dokumen = TipeDokumen::all();
         $status = Status::all();
         $tahun = Tahun::all();
+        $tag_src_produkhukum = TagSrcProdukHukum::all();
 
         // dd($tipe_dokumen);
-        return view('menu.tambahprodukhukum', ['tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun]);
+        return view('menu.tambahprodukhukum', ['tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun, 'tag_src_produkhukum' => $tag_src_produkhukum ]);
     }
 
 
@@ -43,6 +45,7 @@ class produkhukumController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'id_tahun' => 'required',
+            'id_tag' => 'required',
             'id_tipe' => 'required',
             'judul' => 'required',
             'badan_pengarang' => 'required',
@@ -73,6 +76,7 @@ class produkhukumController extends Controller
         } else {
             $produkhukum = new ProdukHukum();
             $produkhukum->id_tahun = $request->input('id_tahun');
+            $produkhukum->id_tag = $request->input('id_tag');
             $produkhukum->id_tipe = $request->input('id_tipe');
             $produkhukum->judul = $request->input('judul');
             $produkhukum->badan_pengarang = $request->input('badan_pengarang');
@@ -124,8 +128,10 @@ class produkhukumController extends Controller
         $tipe_dokumen = TipeDokumen::all();
         $status = Status::all();
         $tahun = Tahun::all();
+        $tag_src_produkhukum = TagSrcProdukHukum::all();
 
-        return view('menu.lihatprodukhukum', ['data' => $data, 'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun]);
+
+        return view('menu.lihatprodukhukum', ['data' => $data, 'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun,'tag_src_produkhukum' => $tag_src_produkhukum]);
     }
 
     public function update(Request $request, $id)
@@ -133,6 +139,7 @@ class produkhukumController extends Controller
 
         $validator = Validator::make($request->all(), [
             'id_tahun' => 'required',
+            'id_tag' => 'required',
             'id_tipe' => 'required',
             'judul' => 'required',
             'badan_pengarang' => 'required',
@@ -165,6 +172,7 @@ class produkhukumController extends Controller
         } else {
             $produkhukum = ProdukHukum::find($id);
             $produkhukum->id_tahun = $request->input('id_tahun');
+            $produkhukum->id_tag = $request->input('id_tag');
             $produkhukum->id_tipe = $request->input('id_tipe');
             $produkhukum->judul = $request->input('judul');
             $produkhukum->badan_pengarang = $request->input('badan_pengarang');
