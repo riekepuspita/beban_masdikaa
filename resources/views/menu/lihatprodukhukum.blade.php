@@ -76,22 +76,6 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="mb-3 row">
-                                                                    <label for="sel2"
-                                                                        class="col-md-4 col-form-label">Tag</label>
-                                                                    <div class="col-md-8">
-                                                                        <select class="form-select" id="sel3"
-                                                                            name="sellist3">
-                                                                            <option value=""selected disabled hidden>
-                                                                                -- Pilih Tag --</option>
-                                                                            @foreach ($tag_src_produkhukum as $tag_src_produkhukum)
-                                                                                <option value="{{ $tag_src_produkhukum->id_tag }}">
-                                                                                    {{ $tag_src_produkhukum->nama_tag }}
-                                                                                </option>
-                                                                            @endforeach
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="mb-3 row">
                                                                     <label for="sel1"
                                                                         class="col-md-4 col-form-label">Tipe
                                                                         Dokumen</label>
@@ -106,6 +90,22 @@
                                                                                 <option
                                                                                     value="{{ $tipe_dokumen->id_tipe }}">
                                                                                     {{ $tipe_dokumen->nama_tipe }}
+                                                                                </option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-3 row">
+                                                                    <label for="sel2"
+                                                                        class="col-md-4 col-form-label">Tag</label>
+                                                                    <div class="col-md-8">
+                                                                        <select class="form-select" id="sel3"
+                                                                            name="sellist3">
+                                                                            <option value=""selected disabled hidden>
+                                                                                -- Pilih Tag --</option>
+                                                                            @foreach ($tag_src_produkhukum as $tag_src_produkhukum)
+                                                                                <option value="{{ $tag_src_produkhukum->id_tag }}">
+                                                                                    {{ $tag_src_produkhukum->nama_tag }}
                                                                                 </option>
                                                                             @endforeach
                                                                         </select>

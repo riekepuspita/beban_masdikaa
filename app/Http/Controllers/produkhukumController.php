@@ -45,8 +45,8 @@ class produkhukumController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'id_tahun' => 'required',
-            'id_tag' => 'required',
             'id_tipe' => 'required',
+            'id_tag' => 'required',
             'judul' => 'required',
             'badan_pengarang' => 'required',
             'no_peraturan' => 'required',
@@ -76,8 +76,8 @@ class produkhukumController extends Controller
         } else {
             $produkhukum = new ProdukHukum();
             $produkhukum->id_tahun = $request->input('id_tahun');
-            $produkhukum->id_tag = $request->input('id_tag');
             $produkhukum->id_tipe = $request->input('id_tipe');
+            $produkhukum->id_tag = $request->input('id_tag');
             $produkhukum->judul = $request->input('judul');
             $produkhukum->badan_pengarang = $request->input('badan_pengarang');
             $produkhukum->no_peraturan = $request->input('no_peraturan');
@@ -139,8 +139,8 @@ class produkhukumController extends Controller
 
         $validator = Validator::make($request->all(), [
             'id_tahun' => 'required',
-            'id_tag' => 'required',
             'id_tipe' => 'required',
+            'id_tag' => 'required',
             'judul' => 'required',
             'badan_pengarang' => 'required',
             'no_peraturan' => 'required',
@@ -172,8 +172,8 @@ class produkhukumController extends Controller
         } else {
             $produkhukum = ProdukHukum::find($id);
             $produkhukum->id_tahun = $request->input('id_tahun');
-            $produkhukum->id_tag = $request->input('id_tag');
             $produkhukum->id_tipe = $request->input('id_tipe');
+            $produkhukum->id_tag = $request->input('id_tag');
             $produkhukum->judul = $request->input('judul');
             $produkhukum->badan_pengarang = $request->input('badan_pengarang');
             $produkhukum->no_peraturan = $request->input('no_peraturan');
