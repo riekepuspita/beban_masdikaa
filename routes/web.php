@@ -64,6 +64,10 @@ Route::get('lpprodukhukum', function () {
     return view('landingpage.lpprodukhukum');
 })->name('landingpage.lpprodukhukum');
 
+Route::get('lihatlpprodukhukum', function () {
+    return view('landingpage.lihatlpprodukhukum');
+})->name('landingpage.lihatlpprodukhukum');
+
 
 Route::get('informasihukum', [informasihukumController::class, 'index'])->name('menu.informasihukum');
 Route::get('produkhukum', [produkhukumController::class, 'index'])->name('menu.produkhukum');

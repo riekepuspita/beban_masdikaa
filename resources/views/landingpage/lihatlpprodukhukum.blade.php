@@ -144,37 +144,6 @@
                     <!--end::Header-->
                     <!--begin::Landing hero-->
                     <div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
-                        <!--begin::Heading-->
-                        <div class="text-center mb-5 mb-lg-10 py-10 py-lg-20">
-                            <!--begin::Title-->
-                            <h1 class="text-white lh-base fw-bold fs-2x fs-lg-3x mb-15"> Jaringan Dokumentasi dan Informasi
-                                Hukum (JDIH)
-                                <br />
-                                <span
-                                    style="background: linear-gradient(to right, #12CE5D 0%, #FFD80C 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
-                                    <span id="kt_landing_hero_text">KABUPATEN MAGETAN</span>
-                                </span>
-                            </h1>
-                            <!--end::Title-->
-                            <!--begin::Action-->
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <a href="../../demo1/dist/index.html" class="btn btn-primary">Peraturan Daerah</a>
-                            <a class="btn btn-primary ms-3">Peraturan Bupati</a>
-                            <a class="btn btn-primary ms-3">Keputusan Bupati</a>
-                            <a class="btn btn-primary ms-3">Instruksi Bupati</a>
-                            <a class="btn btn-primary ms-3">Peraturan Desa</a>
-                            <a class="btn btn-primary ms-3">Peraturan Bersama Bupati</a>
-                            <br>
-                            <br>
-                            <a class="btn btn-primary ms-3">Peraturan Bersama Kepala Desa</a>
-                            <a class="btn btn-primary ms-3">Peraturan Kepala Desa</a>
-                            <a class="btn btn-primary ms-3">Rancangan Peraturan Bupati</a>
-                            <a class="btn btn-primary ms-3">Rancangan Peraturan Daerah</a>
-                            <!--end::Action-->
-                        </div>
                     </div>
                     <!--end::Landing hero-->
                 </div>
@@ -201,84 +170,8 @@
                 <div class="mt-20 mb-n20 position-relative z-index-2">
                     <!--begin::Container-->
                     <div class="container">
-                        <!--begin::Heading-->
-                        <div class="text-center mb-17">
-                            <!--begin::Title-->
-                            <div class="card">
-                                <div class="card-body p-4" style="background-color: #001f3f; color: #fff;">
-                                    <form method="get" id="searchForm" class="mb-0" action="/search">
-                                        <div class="row g-6 g-xl-9">
-                                            <div class="col-lg-7">
-                                                <div class="position-relative">
-                                                    <div
-                                                        class="position-absolute translate-middle-y top-50 start-0 ms-5 me-3">
-                                                        <!--begin::Svg Icon | path: icons/duotune/finance/fin002.svg-->
-                                                        <span class="svg-icon svg-icon-2hx">
-                                                            <i class="bi bi-search"></i>
-                                                        </span>
-                                                        <!--end::Svg Icon-->
-                                                    </div>
-                                                    <input type="text" class="form-control form-control-solid ps-12"
-                                                        name="judul" value="" placeholder="Search"
-                                                        fdprocessedid="eq4xqo">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="row">
-                                                    <div class="col-6 d-grid">
-                                                        <button type="submit" class="btn btn-primary "
-                                                            fdprocessedid="ti1778">Search</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                        {{-- {{ $post->judul }} --}}
 
-                                        <!--begin::Advance form-->
-                                        <div class="collapse" id="kt_advanced_search_form">
-                                            <!--begin::Separator-->
-                                            <div class="separator separator-dashed mt-9 mb-6"></div>
-                                            <!--end::Separator-->
-                                            <!--begin::Row-->
-                                            <div class="row g-8 mb-8">
-
-                                            </div>
-                                            <!--end::Col-->
-                                        </div>
-                                        <!--end::Row-->
-                                </div>
-                                <!--end::Advance form-->
-                                </form>
-                                @if (isset($produk_hukum) && count($produk_hukum) > 0)
-                                    <table id="kt_datatable_dom_positioning"
-                                        class="table table-striped table-row-bordered gy-5 gs-7 border rounded ">
-                                        <thead>
-                                            <tr class="fw-bold fs-6 text-gray-800 px-7">
-                                                <th>TAHUN</th>
-                                                <th>TIPE DOKUMEN</th>
-                                                <th>TAG</th>
-                                                <th>JUDUL</th>
-                                                <th>STATUS</th>
-                                                <th>DETAIL</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($produk_hukum as $data)
-                                                <tr>
-                                                    <td>{{ $data->relasi_id_tahun->tahun }}</td>
-                                                    <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
-                                                    <td>{{ $data->relasi_id_tag->nama_tag }}</td>
-                                                    <td>{{ $data->judul }}</td>
-                                                    <td>{{ $data->relasi_id_status->status }}</td>
-                                                    <td><a href="produk/{{ $data->id }}"
-                                                            class="btn btn-primary">Lihat</a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                @endif
-                            </div>
-                        </div>
                         <br>
                         <br>
                         <br>
