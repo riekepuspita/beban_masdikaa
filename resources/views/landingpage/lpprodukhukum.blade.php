@@ -219,7 +219,7 @@
                                                         <!--end::Svg Icon-->
                                                     </div>
                                                     <input type="text" class="form-control form-control-solid ps-12"
-                                                        name="judul" value="" placeholder="Search"
+                                                        name="result" value="" placeholder="Search"
                                                         fdprocessedid="eq4xqo">
                                                 </div>
                                             </div>

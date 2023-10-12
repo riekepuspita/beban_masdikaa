@@ -219,14 +219,23 @@ class produkhukumController extends Controller
 
     public function search(Request $request)
     {
-        $keyword = $request->input('judul');
+        $keyword = $request->input('result');
+        if($keyword != null) {
+            $produk_hukum = ProdukHukum::where('judul', 'like', '%' . $keyword . '%')
+                ->orWhereHas('relasi_id_tahun', function ($query) use ($keyword) {
+                    $query->where('tahun', 'like', '%' . $keyword . '%');
+                })
+                ->orWhereHas('relasi_id_tipe', function ($query) use ($keyword) {
+                    $query->where('nama_tipe', 'like', '%' . $keyword . '%');
+                })
+                ->orWhereHas('relasi_id_tag', function ($query) use ($keyword) {
+                    $query->where('nama_tag', 'like', '%'.$keyword.'%');
+                })
+                ->get();
+        } else {
+            $produk_hukum = ProdukHukum::where('judul', 'like', '%' . $keyword . '%')->get();
+        }
 
-        // Lakukan pencarian data sesuai dengan kriteria
-        $produk_hukum = ProdukHukum::where('judul', 'like', '%' . $keyword . '%')
-            ->get();
-
-        // Kirim hasil pencarian ke tampilan
-        // return($produkhukum);
         return view('landingpage.lpprodukhukum', ['produk_hukum' => $produk_hukum]);
 
     }
