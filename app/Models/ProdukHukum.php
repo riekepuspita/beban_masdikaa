@@ -45,4 +45,11 @@ class ProdukHukum extends Model
 
             ->select('produk_hukum.*', 'tipe_dokumen.nama_tipe');
     }
+
+    public function show($id)
+    {
+        return $this->join('tipe_dokumen', 'produk_hukum.id_tipe', '=', 'tipe_dokumen.id_tipe')
+            ->join('tahun', 'produk_hukum.id_tahun', '=', 'tahun.nama_tahun')
+            ->where('produk_hukum.id', '=', $id);
+    }
 }

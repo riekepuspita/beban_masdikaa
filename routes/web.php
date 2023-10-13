@@ -78,3 +78,4 @@ Route::get('/produk', [produkhukumController::class, 'index'])->name('produk.ind
 Route::get('/produk/{id}', [produkhukumController::class, 'view'])->name('produk.view');
 Route::post('/produk/update/{id}', [produkhukumController::class, 'update']);
 Route::get('/search', [produkhukumController::class, 'search'])->name('search');
+Route::get('/hukum/{id}', [produkhukumController::class, 'lihatlp'])->name('landingpage.lihatlpprodukhukum');

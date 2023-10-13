@@ -226,19 +226,19 @@
                                             <div class="col-lg-3">
                                                 <div class="row">
                                                     <div class="col-6 d-grid">
-                                                        <button type="submit" class="btn btn-primary "
-                                                            fdprocessedid="ti1778">Search</button>
+                                                        <div class="d-flex gap-2">
+                                                        <button type="submit" class="btn btn-primary w-125px"
+                                                            fdprocessedid="ti1778" >Search</button>
+                                                            <a id="kt_horizontal_search_advanced_link" class="btn btn-secondary w-125px" data-bs-toggle="collapse" href="#kt_advanced_search_form" aria-expanded="true">
+                                                                Adv. Search
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <!--begin::Advance form-->
                                         <div class="collapse" id="kt_advanced_search_form">
-                                            <!--begin::Separator-->
                                             <div class="separator separator-dashed mt-9 mb-6"></div>
-                                            <!--end::Separator-->
-                                            <!--begin::Row-->
                                             <div class="row g-8 mb-8">
 
                                             </div>
@@ -269,7 +269,7 @@
                                                     <td>{{ $data->relasi_id_tag->nama_tag }}</td>
                                                     <td>{{ $data->judul }}</td>
                                                     <td>{{ $data->relasi_id_status->status }}</td>
-                                                    <td><a href="produk/{{ $data->id }}"
+                                                    <td><a href="hukum/{{ $data->id }}"
                                                             class="btn btn-primary">Lihat</a>
                                                     </td>
                                                 </tr>
