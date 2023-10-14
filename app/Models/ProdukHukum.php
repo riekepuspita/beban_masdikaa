@@ -52,4 +52,16 @@ class ProdukHukum extends Model
             ->join('tahun', 'produk_hukum.id_tahun', '=', 'tahun.nama_tahun')
             ->where('produk_hukum.id', '=', $id);
     }
+
+    public function show_hukum($id)
+    {
+        return $this->join('tipe_dokumen', 'produk_hukum.id_tipe', '=', 'tipe_dokumen.id_tipe')
+            // ->join('tahun', 'produk_hukum.id_tahun', '=', 'tahun.nama_tahun')
+            ->join('tipe_dokumen','produk_hukum.id_tipe', '=', 'tipe_dokumen.nama_tipe')
+            ->join('tag_src_produkhukum','produk_hukum.id_tag', '=', 'tag_src_produkhukum.nama_tag')
+            ->join('status','produk_hukum.id_status', '=', 'status.status')
+
+            ->where('produk_hukum.id', '=', $id);
+    }
+
 }

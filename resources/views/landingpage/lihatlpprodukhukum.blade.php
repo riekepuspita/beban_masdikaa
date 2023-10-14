@@ -71,7 +71,7 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#kt_body"
+                                                <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="beranda"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Beranda</a>
                                                 <!--end::Menu link-->
                                             </div>
@@ -180,266 +180,106 @@
                                     <div class="card-body">
                                         <div class="mb-3 row">
                                             <ul id="saveform_errList"></ul>
-                                            <form>
-                                                <div type="hidden" id="id_produk"
-                                                    value="{{ $data->id }}">
-                                                <div class="mb-3 row">
-                                                    <label for="sel1"
-                                                        class="col-md-4 col-form-label">Tahun</label>
-                                                    <div class="col-md-8">
-                                                        {{ $data->id_tahun }}
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3 row">
-                                                    <label for="sel1"
-                                                        class="col-md-4 col-form-label">Tipe
-                                                        Dokumen</label>
-                                                    <div class="col-md-8">
-                                                        <select class="form-select" id="sel1"
-                                                            name="sellist1" disabled>
-                                                            <option value=""selected disabled hidden>
-                                                                --
-                                                                Pilih
-                                                                Tipe Dokumen --</option>
-                                                            @foreach ($tipe_dokumen as $tipe_dokumen)
-                                                                <option
-                                                                    value="{{ $tipe_dokumen->id_tipe }}">
-                                                                    {{ $tipe_dokumen->nama_tipe }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3 row">
-                                                    <label for="sel2"
-                                                        class="col-md-4 col-form-label">Tag</label>
-                                                    <div class="col-md-8">
-                                                        <select class="form-select" id="sel3"
-                                                            name="sellist3" disabled>
-                                                            <option value=""selected disabled hidden>
-                                                                -- Pilih Tag --</option>
-                                                            @foreach ($tag_src_produkhukum as $tag_src_produkhukum)
-                                                                <option value="{{ $tag_src_produkhukum->id_tag }}">
-                                                                    {{ $tag_src_produkhukum->nama_tag }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="judul"
-                                                            class="col-md-4 col-form-label" >Judul</label>
-                                                        <div class="col-md-8">
-                                                            <div class="form-control" id="judul" name="judul" rows="4" readonly>{{ $data->judul }}</div >
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="teu"
-                                                            class="col-md-4 col-form-label">T.E.U
-                                                            Badan/Pengarang</label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control"
-                                                                id="teu" name="teu" readonly
-                                                                value="{{ $data->badan_pengarang }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label class="col-md-4 col-form-label">No.
-                                                            Peraturan</label>
-                                                        <div class="col-md-8">
-                                                            <input class="form-control" id="noprt"
-                                                                name="noprt" pattern="[0-9]+" required readonly
-                                                                value="{{ $data->no_peraturan }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="nopgl"
-                                                            class="col-md-4 col-form-label">No.
-                                                            Panggil</label>
-                                                        <div class="col-md-8">
-                                                            <input type="nopgl" class="form-control"
-                                                                id="nopgl" name="nopgl" readonly
-                                                                value="{{ $data->no_panggil }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="jenis"
-                                                            class="col-md-4 col-form-label">Jenis/
-                                                            Bentuk
-                                                            Peraturan</label>
-                                                        <div class="col-md-8">
-                                                            <input type="jenis" class="form-control"
-                                                                id="jenis" name="jenis" readonly
-                                                                value="{{ $data->jenis_bentuk_peraturan }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="sjns"
-                                                            class="col-md-4 col-form-label">Singkatan
-                                                            Jenis/
-                                                            Bentuk Peraturan</label>
-                                                        <div class="col-md-8">
-                                                            <input type="sjns" class="form-control"
-                                                                id="sjns" name="sjns" readonly
-                                                                value="{{ $data->singkatan_jenis }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">Cetakan
-                                                            Edisi</label>
-                                                        <div class="col-md-8">
-                                                            <input type="ctk" class="form-control"
-                                                                id="ctk" name="ctk" readonly
-                                                                value="{{ $data->cetakan_edisi }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">Tempat
-                                                            Terbit</label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control"
-                                                                id="tempatterbit" name="tempatterbit" readonly
-                                                                value="{{ $data->tempat_terbit }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">Penerbit</label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control"
-                                                                id="penerbit" name="penerbit" readonly
-                                                                value="{{ $data->penerbit }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">Tanggal
-                                                            Penetapan</label>
-                                                        <div class="col-md-8">
-                                                            <input type="date" class="form-control"
-                                                                id="tanggalpenetapan"
-                                                                name="tanggalpenetapan" readonly
-                                                                value="{{ $data->tanggal_penetapan }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="judul"
-                                                            class="col-md-4 col-form-label">Deskripsi
-                                                            Fisik</label>
-                                                        <div class="col-md-8">
-                                                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" readonly>{{ $data->deskripsi_fisik }}</textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">Sumber</label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control"
-                                                                id="sumber" name="sumber" readonly
-                                                                value="{{ $data->sumber }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">Subjek</label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control"
-                                                                id="subjek" name="subjek" readonly
-                                                                value="{{ $data->subjek }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">ISBN</label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control"
-                                                                id="isbn" name="isbn" readonly
-                                                                value="{{ $data->isbn }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="sel1"
-                                                            class="col-md-4 col-form-label">Status</label>
-                                                        <div class="col-md-8">
-                                                            <select class="form-select" id="sel2"
-                                                                name="sellist2" disabled>
-                                                                <option value=""selected disabled
-                                                                    hidden>
-                                                                    -- Pilih Status --</option>
-                                                                @foreach ($status as $status)
-                                                                    <option
-                                                                        value="{{ $status->id_status }}">
-                                                                        {{ $status->status }}
-                                                                    </option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">Bahasa</label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control"
-                                                                id="bahasa" name="bahasa" readonly
-                                                                value="{{ $data->bahasa }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">Lokasi</label>
-                                                        <div class="col-md-8">
-                                                            <input type="text" class="form-control"
-                                                                id="lokasi" name="lokasi" readonly
-                                                                value="{{ $data->lokasi }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="judul"
-                                                            class="col-md-4 col-form-label">Abstraksi</label>
-                                                        <div class="col-md-8">
-                                                            <textarea class="form-control" id="abstraksi" name="abstraksi" rows="4" readonly>{{ $data->abstraksi }}</textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3 row">
-                                                        <label for="c"
-                                                            class="col-md-4 col-form-label">Catatan</label>
-                                                        <div class="col-md-8">
-                                                            <textarea class="form-control" id="catatan" name="catatan" rows="4" readonly>{{ $data->catatan }}</textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    {{-- <form action="{{ route('upload') }}"
-                                                        method="POST" enctype="multipart/form-data">
-                                                        @csrf --}}
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">File
-                                                            Peraturan</label>
-                                                        <div class="col-md-5 d-flex align-items-center">
-                                                            <a href="/upload/{{ $data->file_peraturan }}"
-                                                                class="btn btn-primary">Lihat</a>
-                                                            {{-- <input type="file" id="fileperaturan"
-                                                                name="fileperaturan"> --}}
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="mb-3 row">
-                                                        <label for="ctk"
-                                                            class="col-md-4 col-form-label">File
-                                                            Abstraksi</label>
-                                                        <div class="col-md-5 d-flex align-items-center">
-                                                            <a href="/upload/{{ $data->file_abstraksi }}"
-                                                                class="btn btn-primary">Lihat</a>
-                                                            {{-- <input type="file" id="fileabstraksi"
-                                                                name="fileabstraksi"> --}}
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                            <table class="table table-striped">
+                                                <tbody>
+                                                  <tr>
+                                                    <td width="40%">Tahun</td>
+                                                    <td> </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Tipe Dokumen</td>
+                                                    <td> </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Tag</td>
+                                                    <td> </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Judul</td>
+                                                    <td>{{ $data->judul }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>T.E.U Badan/ Pengarang</td>
+                                                    <td>{{ $data->badan_pengarang }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>No. Peraturan</td>
+                                                    <td>{{ $data->no_peraturan }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>No. Panggil</td>
+                                                    <td>{{ $data->no_panggil }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Jenis/ Bentuk Perturan</td>
+                                                    <td>{{ $data->jenis_bentuk_peraturan }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Singkatan Jenis/ Bentuk Peraturan</td>
+                                                    <td>{{ $data->singkatan_jenis }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Cetakan Edisi</td>
+                                                    <td>{{ $data->cetakan_edisi }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Tempat Terbit</td>
+                                                    <td>{{ $data->tempat_terbit }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Penerbit</td>
+                                                    <td>{{ $data->penerbit }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Tanggal Penetapan</td>
+                                                    <td>{{ $data->tanggal_penetapan }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Deskripsi Fisik</td>
+                                                    <td>{{ $data->deskripsi_fisik }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Sumber</td>
+                                                    <td>{{ $data->sumber }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Subjek</td>
+                                                    <td>{{ $data->subjek }}</td>
+                                                    <tr>
+                                                    <td>ISBN</td>
+                                                    <td>{{ $data->isbn }}</td>
+                                                  </tr>
+                                                    
+                                                  <tr>
+                                                    <td>Status</td>
+                                                    <td> </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Bahasa</td>
+                                                    <td>{{ $data->bahasa }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Lokasi</td>
+                                                    <td>{{ $data->lokasi }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Abstraksi</td>
+                                                    <td>{{ $data->abstraksi }}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Catatan</td>
+                                                    <td>{{ $data->catatan }}</td>
+                                                  </tr>
+                                                <tr>
+                                                    <td>File Abstraksi</td>
+                                                    <td><a href="/upload/{{ $data->file_peraturan }}"
+                                                        class="btn btn-primary">Lihat</a>
+                                                        <a href="/upload/{{ $data->file_peraturan }}"
+                                                            class="btn btn-primary"download >Download</a>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                              </table>
                                         </div>
                                     </div>
                                 </div>

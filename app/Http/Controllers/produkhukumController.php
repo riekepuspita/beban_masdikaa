@@ -240,27 +240,38 @@ class produkhukumController extends Controller
 
     }
 
-    // public function show($id)
-    // {
-    //     $data=new ProdukHukum();
-    //     $post=$data->show($id);
-    //     $hukum=ProdukHukum::find($id);
+    public function show($id)
+    {
+        $data=new ProdukHukum();
+        $post=$data->show($id);
+        $hukum=ProdukHukum::find($id);
         
-    //     // return($hukum);
-    //     return view('landingpage.lihatlpprodukhukum', ['post' => $hukum]);
-    // }
+        // return($hukum);
+        return view('landingpage.lihatlpprodukhukum', ['post' => $hukum]);
+    }
 
     public function lihatlp($id)
     {
         $data = ProdukHukum::find($id);
+        
 
         $tipe_dokumen = TipeDokumen::all();
         $status = Status::all();
         $tahun = Tahun::all();
         $tag_src_produkhukum = TagSrcProdukHukum::all();
 
-        // dd($data->tahun);
+       
         return view('landingpage.lihatlpprodukhukum', ['data' => $data, 'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun'=> $tahun, 'tag_src_produkhukum' => $tag_src_produkhukum]);
     }
+
+    // public function lihatlp($id)
+    // {
+    //     $ph = ProdukHukum::find($id);
+    //     $td = TipeDokumen::where('id_tipe', $ph->id_tipe);
+    //     $tag = TagSrcProdukHukum::where('id_tag', $ph->id_tag);
+    //     $status = Status::where('id_status', $ph->id_status);
+
+    //     return($td);
+    // }
 
 }
