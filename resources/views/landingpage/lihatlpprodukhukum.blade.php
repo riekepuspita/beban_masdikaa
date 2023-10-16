@@ -79,7 +79,7 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#how-it-works"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#Profil"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Profil</a>
                                                 <!--end::Menu link-->
                                             </div>
@@ -87,7 +87,7 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#achievements"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#ProdukHukum"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Produk
                                                     Hukum</a>
                                                 <!--end::Menu link-->
@@ -96,7 +96,7 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#team"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#InformasiHukum"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Informasi
                                                     Hukum</a>
                                                 <!--end::Menu link-->
@@ -105,7 +105,7 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#portfolio"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#KegiatanHukum"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Kegiatan
                                                     Hukum</a>
                                                 <!--end::Menu link-->
@@ -114,14 +114,14 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#pricing"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#Faq"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Faq</a>
                                                 <!--end::Menu link-->
                                             </div>
                                             <!--end::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#pricing"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#Kontak"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Kontak</a>
                                                 <!--end::Menu link-->
                                             </div>

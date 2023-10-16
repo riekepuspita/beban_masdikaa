@@ -71,7 +71,7 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#kt_body"
+                                                <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#Beranda"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Beranda</a>
                                                 <!--end::Menu link-->
                                             </div>
@@ -79,7 +79,7 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#how-it-works"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#Profil"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Profil</a>
                                                 <!--end::Menu link-->
                                             </div>
@@ -87,7 +87,7 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#achievements"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#ProdukHukum"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Produk
                                                     Hukum</a>
                                                 <!--end::Menu link-->
@@ -96,7 +96,7 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#team"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#InformasiHukum"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Informasi
                                                     Hukum</a>
                                                 <!--end::Menu link-->
@@ -105,7 +105,7 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#portfolio"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#KegiatanHukum"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Kegiatan
                                                     Hukum</a>
                                                 <!--end::Menu link-->
@@ -114,14 +114,14 @@
                                             <!--begin::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#pricing"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#Faq"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Faq</a>
                                                 <!--end::Menu link-->
                                             </div>
                                             <!--end::Menu item-->
                                             <div class="menu-item">
                                                 <!--begin::Menu link-->
-                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#pricing"
+                                                <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#Kontak"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Kontak</a>
                                                 <!--end::Menu link-->
                                             </div>
@@ -227,9 +227,12 @@
                                                 <div class="row">
                                                     <div class="col-6 d-grid">
                                                         <div class="d-flex gap-2">
-                                                        <button type="submit" class="btn btn-primary w-125px"
-                                                            fdprocessedid="ti1778" >Search</button>
-                                                            <a id="kt_horizontal_search_advanced_link" class="btn btn-secondary w-125px" data-bs-toggle="collapse" href="#kt_advanced_search_form" aria-expanded="true">
+                                                            <button type="submit" class="btn btn-primary w-125px"
+                                                                fdprocessedid="ti1778">Search</button>
+                                                            <a id="kt_horizontal_search_advanced_link"
+                                                                class="btn btn-secondary w-125px"
+                                                                data-bs-toggle="collapse" href="#kt_advanced_search_form"
+                                                                aria-expanded="true">
                                                                 Adv. Search
                                                             </a>
                                                         </div>
@@ -437,8 +440,8 @@
                 <span class="svg-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
-                        <rect opacity="0.5" x="13" y="6" width="13" height="2"
-                            rx="1" transform="rotate(90 13 6)" fill="currentColor" />
+                        <rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1"
+                            transform="rotate(90 13 6)" fill="currentColor" />
                         <path
                             d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z"
                             fill="currentColor" />
@@ -467,8 +470,8 @@
                             <span class="svg-icon svg-icon-2">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
-                                        rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                        transform="rotate(-45 6 17.3137)" fill="currentColor" />
                                     <rect x="7.41422" y="6" width="16" height="2" rx="1"
                                         transform="rotate(45 7.41422 6)" fill="currentColor" />
                                 </svg>
@@ -1002,8 +1005,8 @@
                             <span class="svg-icon svg-icon-2">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
-                                        rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                        transform="rotate(-45 6 17.3137)" fill="currentColor" />
                                     <rect x="7.41422" y="6" width="16" height="2" rx="1"
                                         transform="rotate(45 7.41422 6)" fill="currentColor" />
                                 </svg>
@@ -1078,9 +1081,8 @@
                                 <span class="svg-icon svg-icon-gray-400 svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="18" y="13" width="13"
-                                            height="2" rx="1" transform="rotate(-180 18 13)"
-                                            fill="currentColor" />
+                                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                            transform="rotate(-180 18 13)" fill="currentColor" />
                                         <path
                                             d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                             fill="currentColor" />
@@ -1132,9 +1134,8 @@
                                 <span class="svg-icon svg-icon-gray-400 svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="18" y="13" width="13"
-                                            height="2" rx="1" transform="rotate(-180 18 13)"
-                                            fill="currentColor" />
+                                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                            transform="rotate(-180 18 13)" fill="currentColor" />
                                         <path
                                             d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                             fill="currentColor" />
@@ -1183,9 +1184,8 @@
                                 <span class="svg-icon svg-icon-gray-400 svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="18" y="13" width="13"
-                                            height="2" rx="1" transform="rotate(-180 18 13)"
-                                            fill="currentColor" />
+                                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                            transform="rotate(-180 18 13)" fill="currentColor" />
                                         <path
                                             d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                             fill="currentColor" />
@@ -1210,8 +1210,7 @@
                                             fill="currentColor" />
                                         <path d="M13 17.4V12C13 11.4 12.6 11 12 11C11.4 11 11 11.4 11 12V17.4H13Z"
                                             fill="currentColor" />
-                                        <path opacity="0.3"
-                                            d="M8 17.4H16L12.7 20.7C12.3 21.1 11.7 21.1 11.3 20.7L8 17.4Z"
+                                        <path opacity="0.3" d="M8 17.4H16L12.7 20.7C12.3 21.1 11.7 21.1 11.3 20.7L8 17.4Z"
                                             fill="currentColor" />
                                     </svg>
                                 </span>
@@ -1237,9 +1236,8 @@
                                 <span class="svg-icon svg-icon-gray-400 svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="18" y="13" width="13"
-                                            height="2" rx="1" transform="rotate(-180 18 13)"
-                                            fill="currentColor" />
+                                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                            transform="rotate(-180 18 13)" fill="currentColor" />
                                         <path
                                             d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                             fill="currentColor" />
@@ -1288,9 +1286,8 @@
                                 <span class="svg-icon svg-icon-gray-400 svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="18" y="13" width="13"
-                                            height="2" rx="1" transform="rotate(-180 18 13)"
-                                            fill="currentColor" />
+                                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                            transform="rotate(-180 18 13)" fill="currentColor" />
                                         <path
                                             d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                             fill="currentColor" />
