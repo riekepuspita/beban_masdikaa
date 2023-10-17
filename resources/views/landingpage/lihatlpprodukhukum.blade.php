@@ -48,10 +48,10 @@
                                     <!--end::Mobile menu toggle-->
                                     <!--begin::Logo image-->
                                     <a href="../../demo1/dist/landing.html">
-                                        <img alt="Logo" src="{{ asset('/media/logos/landing.svg') }}"
-                                            class="logo-default h-25px h-lg-30px" />
-                                        <img alt="Logo" src="{{ asset('/media/logos/landing-dark.svg') }}"
-                                            class="logo-sticky h-20px h-lg-25px" />
+                                        <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}"
+                                            class="logo-default h-100px h-lg-150px" />
+                                        <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}"
+                                            class="logo-sticky h-100px h-lg-150px" />
                                     </a>
                                     <!--end::Logo image-->
                                 </div>
@@ -184,15 +184,15 @@
                                                 <tbody>
                                                   <tr>
                                                     <td width="40%">Tahun</td>
-                                                    <td> </td>
+                                                    <td>{{ $data->tahun }}</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Tipe Dokumen</td>
-                                                    <td> </td>
+                                                    <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Tag</td>
-                                                    <td> </td>
+                                                    <td>{{ $data->relasi_id_tag->nama_tag }}</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Judul</td>
@@ -252,7 +252,7 @@
                                                     
                                                   <tr>
                                                     <td>Status</td>
-                                                    <td> </td>
+                                                    <td>{{ $data->relasi_id_status->status }}</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Bahasa</td>
@@ -271,10 +271,18 @@
                                                     <td>{{ $data->catatan }}</td>
                                                   </tr>
                                                 <tr>
-                                                    <td>File Abstraksi</td>
+                                                    <td>File Peraturan</td>
                                                     <td><a href="/upload/{{ $data->file_peraturan }}"
                                                         class="btn btn-primary">Lihat</a>
                                                         <a href="/upload/{{ $data->file_peraturan }}"
+                                                            class="btn btn-primary"download >Download</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>File Abstraksi</td>
+                                                    <td><a href="/upload/{{ $data->file_abstraksi }}"
+                                                        class="btn btn-primary">Lihat</a>
+                                                        <a href="/upload/{{ $data->file_abstraksi }}"
                                                             class="btn btn-primary"download >Download</a>
                                                     </td>
                                                 </tr>

@@ -91,7 +91,7 @@
                                                         <tbody>
                                                             @foreach ($produkhukum as $data)
                                                                 <tr>
-                                                                    <td>{{ $data->relasi_id_tahun->tahun }}</td>
+                                                                    <td>{{ $data->tahun }}</td>
                                                                     <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
                                                                     <td>{{ $data->relasi_id_tag->nama_tag }}</td>
                                                                     <td>{{ $data->judul }}</td>

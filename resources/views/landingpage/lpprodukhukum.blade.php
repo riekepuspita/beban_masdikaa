@@ -48,10 +48,10 @@
                                     <!--end::Mobile menu toggle-->
                                     <!--begin::Logo image-->
                                     <a href="../../demo1/dist/landing.html">
-                                        <img alt="Logo" src="{{ asset('/media/logos/landing.svg') }}"
-                                            class="logo-default h-25px h-lg-30px" />
-                                        <img alt="Logo" src="{{ asset('/media/logos/landing-dark.svg') }}"
-                                            class="logo-sticky h-20px h-lg-25px" />
+                                        <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}"
+                                            class="logo-default h-100px h-lg-105px" />
+                                        <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}"
+                                            class="logo-sticky h-95px h-lg-90px" />
                                     </a>
                                     <!--end::Logo image-->
                                 </div>
@@ -267,7 +267,7 @@
                                         <tbody>
                                             @foreach ($produk_hukum as $data)
                                                 <tr>
-                                                    <td>{{ $data->relasi_id_tahun->tahun }}</td>
+                                                    <td>{{ $data->tahun }}</td>
                                                     <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
                                                     <td>{{ $data->relasi_id_tag->nama_tag }}</td>
                                                     <td>{{ $data->judul }}</td>

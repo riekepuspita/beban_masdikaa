@@ -15,6 +15,14 @@ use Illuminate\Support\Str;
 
 class produkhukumController extends Controller
 {
+
+    public function yourControllerMethod()
+    {
+    $years = ProdukHukum::all(); // Mengambil semua data tahun dari tabel produkhukum
+
+    return view('your.view', ['years' => $years]);
+    }
+    
     public function index(Request $filter)
     {
         // dd($filter->query('peraturandaerah'));
@@ -32,11 +40,10 @@ class produkhukumController extends Controller
     {
         $tipe_dokumen = TipeDokumen::all();
         $status = Status::all();
-        $tahun = Tahun::all();
         $tag_src_produkhukum = TagSrcProdukHukum::all();
 
         // dd($tipe_dokumen);
-        return view('menu.tambahprodukhukum', ['tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun, 'tag_src_produkhukum' => $tag_src_produkhukum ]);
+        return view('menu.tambahprodukhukum', ['tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tag_src_produkhukum' => $tag_src_produkhukum ]);
     }
 
 
@@ -44,7 +51,7 @@ class produkhukumController extends Controller
     public function store_tambahprodukhukum(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'id_tahun' => 'required',
+            'tahun' => 'required',
             'id_tipe' => 'required',
             'id_tag' => 'required',
             'judul' => 'required',
@@ -75,7 +82,7 @@ class produkhukumController extends Controller
             ]);
         } else {
             $produkhukum = new ProdukHukum();
-            $produkhukum->id_tahun = $request->input('id_tahun');
+            $produkhukum->tahun = $request->input('tahun');
             $produkhukum->id_tipe = $request->input('id_tipe');
             $produkhukum->id_tag = $request->input('id_tag');
             $produkhukum->judul = $request->input('judul');
@@ -126,19 +133,19 @@ class produkhukumController extends Controller
         $data = ProdukHukum::find($id);
 
         $tipe_dokumen = TipeDokumen::all();
+        $tahun = ProdukHukum::all();
         $status = Status::all();
-        $tahun = Tahun::all();
         $tag_src_produkhukum = TagSrcProdukHukum::all();
 
 
-        return view('menu.lihatprodukhukum', ['data' => $data, 'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun' => $tahun,'tag_src_produkhukum' => $tag_src_produkhukum]);
+        return view('menu.lihatprodukhukum', ['data' => $data, 'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tag_src_produkhukum' => $tag_src_produkhukum]);
     }
 
     public function update(Request $request, $id)
     {
 
         $validator = Validator::make($request->all(), [
-            'id_tahun' => 'required',
+            'tahun' => 'required',
             'id_tipe' => 'required',
             'id_tag' => 'required',
             'judul' => 'required',
@@ -171,7 +178,7 @@ class produkhukumController extends Controller
             ]);
         } else {
             $produkhukum = ProdukHukum::find($id);
-            $produkhukum->id_tahun = $request->input('id_tahun');
+            $produkhukum->tahun = $request->input('tahun');
             $produkhukum->id_tipe = $request->input('id_tipe');
             $produkhukum->id_tag = $request->input('id_tag');
             $produkhukum->judul = $request->input('judul');
@@ -222,9 +229,7 @@ class produkhukumController extends Controller
         $keyword = $request->input('result');
         if($keyword != null) {
             $produk_hukum = ProdukHukum::where('judul', 'like', '%' . $keyword . '%')
-                ->orWhereHas('relasi_id_tahun', function ($query) use ($keyword) {
-                    $query->where('tahun', 'like', '%' . $keyword . '%');
-                })
+                ->orWhere('tahun', 'like', '%' . $keyword . '%')
                 ->orWhereHas('relasi_id_tipe', function ($query) use ($keyword) {
                     $query->where('nama_tipe', 'like', '%' . $keyword . '%');
                 })
@@ -236,15 +241,16 @@ class produkhukumController extends Controller
             $produk_hukum = ProdukHukum::where('judul', 'like', '%' . $keyword . '%')->get();
         }
 
+        // dd($produk_hukum);
         return view('landingpage.lpprodukhukum', ['produk_hukum' => $produk_hukum]);
 
     }
 
     public function show($id)
     {
-        $data=new ProdukHukum();
-        $post=$data->show($id);
-        $hukum=ProdukHukum::find($id);
+        $data = new ProdukHukum();
+        $post = $data->show($id);
+        $hukum = ProdukHukum::find($id);
         
         // return($hukum);
         return view('landingpage.lihatlpprodukhukum', ['post' => $hukum]);
@@ -257,11 +263,10 @@ class produkhukumController extends Controller
 
         $tipe_dokumen = TipeDokumen::all();
         $status = Status::all();
-        $tahun = Tahun::all();
         $tag_src_produkhukum = TagSrcProdukHukum::all();
 
        
-        return view('landingpage.lihatlpprodukhukum', ['data' => $data, 'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tahun'=> $tahun, 'tag_src_produkhukum' => $tag_src_produkhukum]);
+        return view('landingpage.lihatlpprodukhukum', ['data' => $data, 'tipe_dokumen' => $tipe_dokumen, 'status' => $status, 'tag_src_produkhukum' => $tag_src_produkhukum]);
     }
 
     // public function lihatlp($id)

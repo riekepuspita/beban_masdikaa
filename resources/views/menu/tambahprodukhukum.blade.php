@@ -60,18 +60,21 @@
                                                                 <div class="mb-3 row">
                                                                     <label for="sel1"
                                                                         class="col-md-4 col-form-label">Tahun</label>
-                                                                    <div class="col-md-8">
-                                                                        <select class="form-select" id="sel0"
-                                                                            name="sellist0">
-                                                                            <option value=""selected disabled hidden>
-                                                                                -- Pilih Tahun --</option>
-                                                                            @foreach ($tahun as $tahun)
-                                                                                <option value="{{ $tahun->id_tahun }}">
-                                                                                    {{ $tahun->tahun }}
-                                                                                </option>
-                                                                            @endforeach
-                                                                        </select>
-                                                                    </div>
+                                                                        <div class="col-md-8">
+                                                                            <select class="form-select" id="sel0" name="sellist0">
+                                                                                <option value="" selected disabled hidden>-- Pilih Tahun --</option>
+                                                                                @php
+                                                                                    $startYear = 2023;$endYear = $startYear + 10; // Tahun terakhir yang ingin ditampilkan
+                                                                                @endphp
+                                                                                @for ($year = $startYear; $year <= $endYear; $year++)
+                                                                                    <option value="{{ $year }}">
+                                                                                        {{ $year }}
+                                                                                    </option>
+                                                                                @endfor
+                                                                            </select>
+                                                                        </div>
+                                                                        
+                                                                        
                                                                 </div>
                                                                 
                                                                 <div class="mb-3 row">
@@ -380,7 +383,7 @@
             $(document).on('click', '.add_produkhukum', function(e) {
                 e.preventDefault();
                 var formData = new FormData();
-                formData.append('id_tahun', $('#sel0').val());
+                formData.append('tahun', $('#sel0').val());
                 formData.append('id_tipe', $('#sel1').val());
                 formData.append('id_tag', $('#sel3').val());
                 formData.append('judul', $('#judul').val());
