@@ -24,6 +24,10 @@ Route::get('dasbor', function () {
     return view('dasbor');
 })->name('dasbor');
 
+Route::get('masuk', function () {
+    return view('masuk');
+})->name('masuk');
+
 Route::get('informasihukum', function () {
     return view('menu.informasihukum');
 })->name('menu.informasihukum');

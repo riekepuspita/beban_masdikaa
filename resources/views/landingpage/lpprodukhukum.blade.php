@@ -4,13 +4,6 @@
     Landing Page Produk Hukum
 @endsection
 
-@section('head')
-    <link rel="shortcut icon" href="{{ asset('media/logos/jdih2.png') }}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
-    <link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-@endsection
-
 @section('content')
 
     <body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu"
@@ -132,7 +125,7 @@
                                 <!--end::Menu wrapper-->
                                 <!--begin::Toolbar-->
                                 <div class="flex-equal text-end ms-1">
-                                    <a href="../../demo1/dist/authentication/layouts/basic/sign-in.html"
+                                    <a href="{{ route('masuk') }}"
                                         class="btn btn-success">Sign In</a>
                                 </div>
                                 <!--end::Toolbar-->

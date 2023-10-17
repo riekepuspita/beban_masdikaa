@@ -4,17 +4,10 @@
     Lihat Landing Page Produk Hukum
 @endsection
 
-@section('head')
-    <link rel="shortcut icon" href="{{ asset('media/logos/jdih2.png') }}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
-    <link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-@endsection
 
 @section('content')
 
-    <body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu"
-        class="bg-white position-relative app-blank">
+    <body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu" class="bg-white position-relative app-blank">
 
         <!--end::Theme mode setup on page load-->
         <!--begin::Root-->
@@ -132,8 +125,7 @@
                                 <!--end::Menu wrapper-->
                                 <!--begin::Toolbar-->
                                 <div class="flex-equal text-end ms-1">
-                                    <a href="../../demo1/dist/authentication/layouts/basic/sign-in.html"
-                                        class="btn btn-success">Sign In</a>
+                                    <a href="{{ route('masuk') }}" class="btn btn-success">Sign In</a>
                                 </div>
                                 <!--end::Toolbar-->
                             </div>
@@ -145,7 +137,7 @@
                     <!--begin::Landing hero-->
                     <div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
                         <h1>
-                            {{ $data->judul }}
+                            <span style="color: white;">{{ $data->judul }}</span>
                         </h1>
                     </div>
                     <!--end::Landing hero-->
@@ -182,112 +174,112 @@
                                             <ul id="saveform_errList"></ul>
                                             <table class="table table-striped">
                                                 <tbody>
-                                                  <tr>
-                                                    <td width="40%">Tahun</td>
-                                                    <td>{{ $data->tahun }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Tipe Dokumen</td>
-                                                    <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Tag</td>
-                                                    <td>{{ $data->relasi_id_tag->nama_tag }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Judul</td>
-                                                    <td>{{ $data->judul }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>T.E.U Badan/ Pengarang</td>
-                                                    <td>{{ $data->badan_pengarang }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>No. Peraturan</td>
-                                                    <td>{{ $data->no_peraturan }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>No. Panggil</td>
-                                                    <td>{{ $data->no_panggil }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Jenis/ Bentuk Perturan</td>
-                                                    <td>{{ $data->jenis_bentuk_peraturan }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Singkatan Jenis/ Bentuk Peraturan</td>
-                                                    <td>{{ $data->singkatan_jenis }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Cetakan Edisi</td>
-                                                    <td>{{ $data->cetakan_edisi }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Tempat Terbit</td>
-                                                    <td>{{ $data->tempat_terbit }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Penerbit</td>
-                                                    <td>{{ $data->penerbit }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Tanggal Penetapan</td>
-                                                    <td>{{ $data->tanggal_penetapan }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Deskripsi Fisik</td>
-                                                    <td>{{ $data->deskripsi_fisik }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Sumber</td>
-                                                    <td>{{ $data->sumber }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Subjek</td>
-                                                    <td>{{ $data->subjek }}</td>
                                                     <tr>
-                                                    <td>ISBN</td>
-                                                    <td>{{ $data->isbn }}</td>
-                                                  </tr>
-                                                    
-                                                  <tr>
-                                                    <td>Status</td>
-                                                    <td>{{ $data->relasi_id_status->status }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Bahasa</td>
-                                                    <td>{{ $data->bahasa }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Lokasi</td>
-                                                    <td>{{ $data->lokasi }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Abstraksi</td>
-                                                    <td>{{ $data->abstraksi }}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Catatan</td>
-                                                    <td>{{ $data->catatan }}</td>
-                                                  </tr>
-                                                <tr>
-                                                    <td>File Peraturan</td>
-                                                    <td><a href="/upload/{{ $data->file_peraturan }}"
-                                                        class="btn btn-primary">Lihat</a>
-                                                        <a href="/upload/{{ $data->file_peraturan }}"
-                                                            class="btn btn-primary"download >Download</a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>File Abstraksi</td>
-                                                    <td><a href="/upload/{{ $data->file_abstraksi }}"
-                                                        class="btn btn-primary">Lihat</a>
-                                                        <a href="/upload/{{ $data->file_abstraksi }}"
-                                                            class="btn btn-primary"download >Download</a>
-                                                    </td>
-                                                </tr>
+                                                        <td width="40%">Tahun</td>
+                                                        <td>{{ $data->tahun }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tipe Dokumen</td>
+                                                        <td>{{ $data->relasi_id_tipe->nama_tipe }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tag</td>
+                                                        <td>{{ $data->relasi_id_tag->nama_tag }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Judul</td>
+                                                        <td>{{ $data->judul }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>T.E.U Badan/ Pengarang</td>
+                                                        <td>{{ $data->badan_pengarang }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>No. Peraturan</td>
+                                                        <td>{{ $data->no_peraturan }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>No. Panggil</td>
+                                                        <td>{{ $data->no_panggil }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jenis/ Bentuk Perturan</td>
+                                                        <td>{{ $data->jenis_bentuk_peraturan }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Singkatan Jenis/ Bentuk Peraturan</td>
+                                                        <td>{{ $data->singkatan_jenis }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Cetakan Edisi</td>
+                                                        <td>{{ $data->cetakan_edisi }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tempat Terbit</td>
+                                                        <td>{{ $data->tempat_terbit }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Penerbit</td>
+                                                        <td>{{ $data->penerbit }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tanggal Penetapan</td>
+                                                        <td>{{ $data->tanggal_penetapan }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Deskripsi Fisik</td>
+                                                        <td>{{ $data->deskripsi_fisik }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sumber</td>
+                                                        <td>{{ $data->sumber }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Subjek</td>
+                                                        <td>{{ $data->subjek }}</td>
+                                                    <tr>
+                                                        <td>ISBN</td>
+                                                        <td>{{ $data->isbn }}</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Status</td>
+                                                        <td>{{ $data->relasi_id_status->status }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Bahasa</td>
+                                                        <td>{{ $data->bahasa }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Lokasi</td>
+                                                        <td>{{ $data->lokasi }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Abstraksi</td>
+                                                        <td>{{ $data->abstraksi }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Catatan</td>
+                                                        <td>{{ $data->catatan }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>File Peraturan</td>
+                                                        <td><a href="/upload/{{ $data->file_peraturan }}"
+                                                                class="btn btn-primary">Lihat</a>
+                                                            <a href="/upload/{{ $data->file_peraturan }}"
+                                                                class="btn btn-primary"download>Download</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>File Abstraksi</td>
+                                                        <td><a href="/upload/{{ $data->file_abstraksi }}"
+                                                                class="btn btn-primary">Lihat</a>
+                                                            <a href="/upload/{{ $data->file_abstraksi }}"
+                                                                class="btn btn-primary"download>Download</a>
+                                                        </td>
+                                                    </tr>
                                                 </tbody>
-                                              </table>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
@@ -452,8 +444,8 @@
                 <span class="svg-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
-                        <rect opacity="0.5" x="13" y="6" width="13" height="2"
-                            rx="1" transform="rotate(90 13 6)" fill="currentColor" />
+                        <rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1"
+                            transform="rotate(90 13 6)" fill="currentColor" />
                         <path
                             d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z"
                             fill="currentColor" />
@@ -482,8 +474,8 @@
                             <span class="svg-icon svg-icon-2">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
-                                        rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                        transform="rotate(-45 6 17.3137)" fill="currentColor" />
                                     <rect x="7.41422" y="6" width="16" height="2" rx="1"
                                         transform="rotate(45 7.41422 6)" fill="currentColor" />
                                 </svg>
@@ -1017,8 +1009,8 @@
                             <span class="svg-icon svg-icon-2">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2"
-                                        rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1"
+                                        transform="rotate(-45 6 17.3137)" fill="currentColor" />
                                     <rect x="7.41422" y="6" width="16" height="2" rx="1"
                                         transform="rotate(45 7.41422 6)" fill="currentColor" />
                                 </svg>
@@ -1093,9 +1085,8 @@
                                 <span class="svg-icon svg-icon-gray-400 svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="18" y="13" width="13"
-                                            height="2" rx="1" transform="rotate(-180 18 13)"
-                                            fill="currentColor" />
+                                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                            transform="rotate(-180 18 13)" fill="currentColor" />
                                         <path
                                             d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                             fill="currentColor" />
@@ -1147,9 +1138,8 @@
                                 <span class="svg-icon svg-icon-gray-400 svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="18" y="13" width="13"
-                                            height="2" rx="1" transform="rotate(-180 18 13)"
-                                            fill="currentColor" />
+                                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                            transform="rotate(-180 18 13)" fill="currentColor" />
                                         <path
                                             d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                             fill="currentColor" />
@@ -1198,9 +1188,8 @@
                                 <span class="svg-icon svg-icon-gray-400 svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="18" y="13" width="13"
-                                            height="2" rx="1" transform="rotate(-180 18 13)"
-                                            fill="currentColor" />
+                                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                            transform="rotate(-180 18 13)" fill="currentColor" />
                                         <path
                                             d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                             fill="currentColor" />
@@ -1225,8 +1214,7 @@
                                             fill="currentColor" />
                                         <path d="M13 17.4V12C13 11.4 12.6 11 12 11C11.4 11 11 11.4 11 12V17.4H13Z"
                                             fill="currentColor" />
-                                        <path opacity="0.3"
-                                            d="M8 17.4H16L12.7 20.7C12.3 21.1 11.7 21.1 11.3 20.7L8 17.4Z"
+                                        <path opacity="0.3" d="M8 17.4H16L12.7 20.7C12.3 21.1 11.7 21.1 11.3 20.7L8 17.4Z"
                                             fill="currentColor" />
                                     </svg>
                                 </span>
@@ -1252,9 +1240,8 @@
                                 <span class="svg-icon svg-icon-gray-400 svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="18" y="13" width="13"
-                                            height="2" rx="1" transform="rotate(-180 18 13)"
-                                            fill="currentColor" />
+                                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                            transform="rotate(-180 18 13)" fill="currentColor" />
                                         <path
                                             d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                             fill="currentColor" />
@@ -1303,9 +1290,8 @@
                                 <span class="svg-icon svg-icon-gray-400 svg-icon-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="18" y="13" width="13"
-                                            height="2" rx="1" transform="rotate(-180 18 13)"
-                                            fill="currentColor" />
+                                        <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1"
+                                            transform="rotate(-180 18 13)" fill="currentColor" />
                                         <path
                                             d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
                                             fill="currentColor" />
