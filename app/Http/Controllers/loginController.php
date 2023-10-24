@@ -27,7 +27,7 @@ class loginController extends Controller
 
             $request->session()->regenerate();
             // dd("Ok Login");
-            return redirect()->intended('/dasbor');
+            return redirect()->intended('/produkhukum');
         }
 
         // dd('error login');

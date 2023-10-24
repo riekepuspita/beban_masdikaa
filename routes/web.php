@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    return view('landingpage.lpprodukhukum');
+})->name('lpprodukhukum')->middleware('guest');
 
 Route::get('dasbor', function () {
     return view('dasbor');
@@ -58,7 +58,7 @@ Route::get('tambahprodukhukum', function () {
 
 Route::get('kegiatanhukum', function () {
     return view('menu.kegiatanhukum');
-})->name('menu.kegiatanhukum');
+})->name('menu.kegiatanhukum')->middleware('auth');
 
 Route::get('tambahkegiatanhukum', function () {
     return view('menu.tambahkegiatan');
@@ -82,7 +82,7 @@ Route::get('lihatlpprodukhukum', function () {
 
 
 Route::get('informasihukum', [informasihukumController::class, 'index'])->name('menu.informasihukum');
-Route::get('produkhukum', [produkhukumController::class, 'index'])->name('menu.produkhukum');
+Route::get('produkhukum', [produkhukumController::class, 'index'])->name('menu.produkhukum')->middleware('auth');
 Route::get('kegiatanhukum', [kegiatanhukumController::class, 'index'])->name('menu.kegiatanhukum');
 Route::post('/produkhukum/add', [produkhukumController::class, 'store_tambahprodukhukum'])->name('add_produkhukum');
 Route::get('/tambahprodukhukum', [produkhukumController::class, 'pilihanprodukhukum'])->name('menu.tambahprodukhukum');
