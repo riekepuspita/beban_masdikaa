@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\informasihukumController;
 use App\Http\Controllers\kegiatanhukumController;
+use App\Http\Controllers\loginController;
 use App\Http\Controllers\produkhukumController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,11 +23,18 @@ Route::get('/', function () {
 
 Route::get('dasbor', function () {
     return view('dasbor');
-})->name('dasbor');
+})->name('dasbor')->middleware('auth'); //? Hanya bisa di akses oleh yang sudah login
 
-Route::get('masuk', function () {
-    return view('masuk');
-})->name('masuk');
+// Route::get('masuk', function () {
+//     return view('login');
+// })->name('masuk');
+
+//! #3 Membuat Route ke controller untuk login
+//? Function untuk get views dari login
+Route::get('/login', [loginController::class, 'index'])->name('login')->middleware('guest');
+//? Function untuk mengirim form login ke authenticate
+Route::post('/login', [loginController::class, 'authenticate']);
+Route::post('/logout', [loginController::class, 'logout'])->name('logout');
 
 Route::get('informasihukum', function () {
     return view('menu.informasihukum');

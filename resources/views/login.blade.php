@@ -36,35 +36,50 @@
 
                     <div class="card rounded-3 w-md-550px">
                         <div class="card-body p-10 p-lg-20">
-                            <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form"
-                                data-kt-redirect-url= {{ route('dasbor') }} action="#">
+                            {{-- Form Login --}}
+
+                            {{-- ! #1 Menambahkan method "post" dan action pada form --}}
+                            <form id="" action="/login" method="post" class="form w-100" novalidate="novalidate">
+                                {{-- data-kt-redirect-url={{ route('dasbor') }} --}}
+                                @csrf
+                                {{-- @csrf untuk mengirimkan token --}}
                                 <div class="text-center mb-11">
                                     <h1 class="text-dark fw-bolder mb-3">Masuk</h1>
                                     <div class="text-gray-500 fw-semibold fs-6">JDIH Kabupaten Magetan</div>
                                 </div>
+
                                 <div class="fv-row mb-8">
-                                    <input type="text" placeholder="Email" name="email" autocomplete="off"
-                                        class="form-control bg-transparent" />
+                                    {{-- ! #2 Menambahkan name dan id pada input type --}}
+                                    <input type="email" placeholder="Email" autocomplete="off" class="form-control bg-transparent" name="email"
+                                        id="email" value="{{ old('email') }}" required />
                                 </div>
+
                                 <div class="fv-row mb-3">
-                                    <input type="password" placeholder="Password" name="password" autocomplete="off"
-                                        class="form-control bg-transparent" />
+                                    {{-- ! #2 Menambahkan name dan id pada input type --}}
+                                    <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent"
+                                        name="password" id="password" required />
                                 </div>
+
                                 <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
                                     <div></div>
-                                    <a href="../../demo1/dist/authentication/layouts/creative/reset-password.html"
-                                        class="link-primary">Forgot Password ?</a>
+                                    <a href="../../demo1/dist/authentication/layouts/creative/reset-password.html" class="link-primary">Forgot Password
+                                        ?</a>
                                 </div>
+
                                 <div class="d-grid mb-10">
                                     <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
                                         <span class="indicator-label">Masuk</span>
+
                                         <span class="indicator-progress">Please wait...
                                             <span class="spinner-border spinner-border-sm align-middle ms-2">
                                             </span>
                                         </span>
+
                                     </button>
                                 </div>
                             </form>
+
+                            {{-- End Form Login --}}
                         </div>
                     </div>
                 </div>
