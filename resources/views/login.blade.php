@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Masuk
+    Login
 @endsection
 
 @section('content')
