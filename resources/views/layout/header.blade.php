@@ -21,7 +21,7 @@
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <a href="../../demo1/dist/index.html" class="d-lg-none">
-                <img alt="Logo" src="{{ asset('media/logos/jdih2.svg') }}/" class="h-0px" />
+                <img alt="Logo" src="{{ asset('media/logos/jdih_logo.svg') }}/" class="h-0px" />
             </a>
         </div>
         <!--end::Mobile logo-->

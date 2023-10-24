@@ -6,8 +6,8 @@
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
         <!--begin::Logo image-->
         <a href="{{ route('dasbor') }}">
-            <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}" class="h-70px app-sidebar-logo-default" />
-            <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}" class="h-70px app-sidebar-logo-minimize" />
+            <img alt="Logo" src="{{ asset('media/logos/jdih_logo.png') }}" class="h-70px app-sidebar-logo-default" />
+            <img alt="Logo" src="{{ asset('media/logos/jdih_logo.png') }}" class="h-70px app-sidebar-logo-minimize" />
         </a>
         <!--end::Logo image-->
         <!--begin::Sidebar toggle-->

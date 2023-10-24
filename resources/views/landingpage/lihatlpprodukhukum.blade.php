@@ -41,9 +41,9 @@
                                     <!--end::Mobile menu toggle-->
                                     <!--begin::Logo image-->
                                     <a href="../../demo1/dist/landing.html">
-                                        <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}"
+                                        <img alt="Logo" src="{{ asset('media/logos/jdih_logo.png') }}"
                                             class="logo-default h-100px h-lg-150px" />
-                                        <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}"
+                                        <img alt="Logo" src="{{ asset('media/logos/jdih_logo.png') }}"
                                             class="logo-sticky h-100px h-lg-150px" />
                                     </a>
                                     <!--end::Logo image-->
