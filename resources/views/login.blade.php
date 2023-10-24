@@ -26,7 +26,7 @@
                     <div class="d-flex flex-center flex-lg-start flex-column">
                         <!--begin::Logo-->
                         <a href="../../demo1/dist/index.html" class="mb-7">
-                            <img alt="Logo" src="{{ asset('media/logos/jdih2.png') }}" />
+                            <img alt="Logo" src="{{ asset('media/logos/jdih_logo.png') }}" />
                         </a>
                         <h2 class="text-white fw-normal m-0">Jaringan Dokumentasi dan Informasi Hukum</h2>
                     </div>
