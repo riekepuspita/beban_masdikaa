@@ -14,7 +14,7 @@
         </div>
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <a href="../../demo1/dist/index.html" class="d-lg-none">
-                <img alt="Logo" src="{{ asset('media/logos/jdih_logo.svg') }}/" class="h-0px" />
+                <img alt="Logo" src="{{ asset('media/logos/jdih_logo2.svg') }}/" class="h-0px" />
             </a>
         </div>
         <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
