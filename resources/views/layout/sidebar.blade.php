@@ -1,21 +1,15 @@
-<!--begin::Sidebar-->
 <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar"
     data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px"
     data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
-    <!--begin::Logo-->
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
-        <!--begin::Logo image-->
         <a href="{{ route('dasbor') }}">
             <img alt="Logo" src="{{ asset('media/logos/jdih_logo.png') }}" class="h-70px app-sidebar-logo-default" />
             <img alt="Logo" src="{{ asset('media/logos/jdih_logo.png') }}" class="h-70px app-sidebar-logo-minimize" />
         </a>
-        <!--end::Logo image-->
-        <!--begin::Sidebar toggle-->
         <div id="kt_app_sidebar_toggle"
             class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary body-bg h-30px w-30px position-absolute top-50 start-100 translate-middle rotate"
             data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"
             data-kt-toggle-name="app-sidebar-minimize">
-            <!--begin::Svg Icon | path: icons/duotune/arrows/arr079.svg-->
             <span class="svg-icon svg-icon-2 rotate-180">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -27,27 +21,18 @@
                         fill="currentColor" />
                 </svg>
             </span>
-            <!--end::Svg Icon-->
         </div>
-        <!--end::Sidebar toggle-->
     </div>
-    <!--end::Logo-->
-    <!--begin::sidebar menu-->
     <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
-        <!--begin::Menu wrapper-->
         <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5"
             data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto"
             data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer"
             data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
-            <!--begin::Menu-->
             <div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu"
                 data-kt-menu="true" data-kt-menu-expand="false">
-                <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/docs/metronic/html/releases/2023-07-21-074234/core/html/src/media/icons/duotune/abstract/abs029.svg-->
                             <span class="svg-icon svg-icon-muted svg-icon-2hx">
                                 <svg width="24" height="24" viewBox="0 0 30 30" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -59,48 +44,32 @@
                                         fill="currentColor" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">Master</span>
                         <span class="menu-arrow"></span>
                     </span>
-                    <!--end:Menu link-->
-                    <!--begin:Menu sub-->
                     <div class="menu-sub menu-sub-accordion">
-                        <!--begin:Menu item-->
                         <div class="menu-item">
-                            <!--begin:Menu link-->
                             <a class="menu-link " href="../../demo1/dist/index.html">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">User</span>
                             </a>
-                            <!--end:Menu link-->
                         </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
                         <div class="menu-item">
-                            <!--begin:Menu link-->
                             <a class="menu-link" href="../../demo1/dist/dashboards/ecommerce.html">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Peraturan</span>
                             </a>
-                            <!--end:Menu link-->
-                            <!--end:Menu item-->
                         </div>
                     </div>
-                    <!--end:Menu sub-->
                 </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
                 <div class="menu-item menu-accordion">
-                    <!--begin:Menu link-->
                     <a class="menu-link" href="{{ route('menu.produkhukum') }}">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/docs/metronic/html/releases/2023-07-21-074234/core/html/src/media/icons/duotune/general/gen028.svg-->
                             <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24"
                                     viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect opacity="0.5" x="7" y="2" width="14" height="16"
@@ -109,19 +78,13 @@
                                         fill="currentColor" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">Produk Hukum</span>
                     </a>
-                    <!--end:Menu link-->
                 </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
                 <div class="menu-item menu-accordion">
-                    <!--begin:Menu link-->
                     <a class="menu-link" href="{{ route('menu.informasihukum') }}">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/docs/metronic/html/releases/2023-07-21-074234/core/html/src/media/icons/duotune/general/gen005.svg-->
                             <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24"
                                     viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path opacity="0.2"
@@ -138,17 +101,11 @@
                             </span>
                         </span>
                         <span class="menu-title">Informasi Hukum</span>
-                        <!--end::Svg Icon-->
                     </a>
-                    <!--end:Menu link-->
                 </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
                 <div class="menu-item menu-accordion">
-                    <!--begin:Menu link-->
                     <a class="menu-link" href="{{ route('menu.kegiatanhukum') }}">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/docs/metronic/html/releases/2023-07-21-074234/core/html/src/media/icons/duotune/communication/com013.svg-->
                             <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24"
                                     viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -158,19 +115,13 @@
                                         height="8" rx="4" fill="currentColor" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">Kegiatan Hukum</span>
                     </a>
-                    <!--end:Menu link-->
                 </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
                 <div class="menu-item menu-accordion">
-                    <!--begin:Menu link-->
                     <a class="menu-link" href="{{ route('menu.faq') }}">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/docs/metronic/html/releases/2023-07-21-074234/core/html/src/media/icons/duotune/files/fil003.svg-->
                             <span class="svg-icon svg-icon-muted svg-icon-2hx">
                                 <svg width="24" height="24" viewBox="0 0 30 30" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -180,19 +131,13 @@
                                     <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">FAQ</span>
                     </a>
-                    <!--end:Menu link-->
                 </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <!--begin:Menu link-->
                     <span class="menu-link">
                         <span class="menu-icon">
-                            <!--begin::Svg Icon | path: /var/www/preview.keenthemes.com/kt-products/docs/metronic/html/releases/2023-07-21-074234/core/html/src/media/icons/duotune/communication/com006.svg-->
                             <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path opacity="0.3"
@@ -205,72 +150,47 @@
                                         rx="2" fill="currentColor" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->
                         </span>
                         <span class="menu-title">Profil</span>
                         <span class="menu-arrow"></span>
                     </span>
-                    <!--end:Menu link-->
-                    <!--begin:Menu sub-->
                     <div class="menu-sub menu-sub-accordion">
-                        <!--begin:Menu item-->
                         <div class="menu-item">
-                            <!--begin:Menu link-->
                             <a class="menu-link" href="../../demo1/dist/pages/social/feeds.html">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Visi & Misi</span>
                             </a>
-                            <!--end:Menu link-->
                         </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
                         <div class="menu-item">
-                            <!--begin:Menu link-->
                             <a class="menu-link" href="../../demo1/dist/pages/social/activity.html">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Struktur Organisasi</span>
                             </a>
-                            <!--end:Menu link-->
                         </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
                         <div class="menu-item">
-                            <!--begin:Menu link-->
                             <a class="menu-link" href="../../demo1/dist/pages/social/followers.html">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Kata Sambutan</span>
                             </a>
-                            <!--end:Menu link-->
                         </div>
-                        <!--end:Menu item-->
-                        <!--begin:Menu item-->
                         <div class="menu-item">
-                            <!--begin:Menu link-->
                             <a class="menu-link" href="../../demo1/dist/pages/social/settings.html">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Anggota</span>
                             </a>
-                            <!--end:Menu link-->
                         </div>
-                        <!--end:Menu item-->
                     </div>
-                    <!--end:Menu sub-->
                 </div>
-                <!--end:Menu item-->
             </div>
-            <!--end::Menu-->
         </div>
-        <!--end::Menu wrapper-->
     </div>
-    <!--end::sidebar menu-->
 </div>
-<!--end::Sidebar-->
 

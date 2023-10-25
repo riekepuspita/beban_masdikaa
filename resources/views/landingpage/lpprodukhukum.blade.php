@@ -15,12 +15,9 @@
                         data-kt-sticky-offset="{default: '200px', lg: '300px'}">
                         <div class="container">
                             <div class="d-flex align-items-center justify-content-between">
-                                <!--begin::Logo-->
                                 <div class="d-flex align-items-center flex-equal">
-                                    <!--begin::Mobile menu toggle-->
                                     <button class="btn btn-icon btn-active-color-primary me-3 d-flex d-lg-none"
                                         id="kt_landing_menu_toggle">
-                                        <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
                                         <span class="svg-icon svg-icon-2hx">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -32,20 +29,14 @@
                                                     fill="currentColor" />
                                             </svg>
                                         </span>
-                                        <!--end::Svg Icon-->
                                     </button>
-                                    <!--end::Mobile menu toggle-->
-                                    <!--begin::Logo image-->
                                     <a href="../../demo1/dist/landing.html">
                                         <img alt="Logo" src="{{ asset('media/logos/jdih_logo.png') }}"
                                             class="logo-default h-100px h-lg-110px" />
                                         <img alt="Logo" src="{{ asset('media/logos/jdih_logo.png') }}"
                                             class="logo-sticky h-95px h-lg-90px" />
                                     </a>
-                                    <!--end::Logo image-->
                                 </div>
-                                <!--end::Logo-->
-                                <!--begin::Menu wrapper-->
                                 <div class="d-lg-block" id="kt_header_nav_wrapper">
                                     <div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true"
                                         data-kt-drawer-name="landing-menu"
@@ -54,87 +45,50 @@
                                         data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true"
                                         data-kt-swapper-mode="prepend"
                                         data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
-                                        <!--begin::Menu-->
                                         <div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-500 menu-state-title-primary nav nav-flush fs-5 fw-semibold"
                                             id="kt_landing_menu">
-                                            <!--begin::Menu item-->
                                             <div class="menu-item">
-                                                <!--begin::Menu link-->
                                                 <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#Beranda"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Beranda</a>
-                                                <!--end::Menu link-->
                                             </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
                                             <div class="menu-item">
-                                                <!--begin::Menu link-->
                                                 <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#Profil"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Profil</a>
-                                                <!--end::Menu link-->
                                             </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
                                             <div class="menu-item">
-                                                <!--begin::Menu link-->
                                                 <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#ProdukHukum"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Produk
                                                     Hukum</a>
-                                                <!--end::Menu link-->
                                             </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
                                             <div class="menu-item">
-                                                <!--begin::Menu link-->
                                                 <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#InformasiHukum"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Informasi
                                                     Hukum</a>
-                                                <!--end::Menu link-->
                                             </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
                                             <div class="menu-item">
-                                                <!--begin::Menu link-->
                                                 <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#KegiatanHukum"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Kegiatan
                                                     Hukum</a>
-                                                <!--end::Menu link-->
                                             </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
                                             <div class="menu-item">
-                                                <!--begin::Menu link-->
                                                 <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#Faq"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Faq</a>
-                                                <!--end::Menu link-->
                                             </div>
-                                            <!--end::Menu item-->
                                             <div class="menu-item">
-                                                <!--begin::Menu link-->
                                                 <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#Kontak"
                                                     data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Kontak</a>
-                                                <!--end::Menu link-->
                                             </div>
                                         </div>
-                                        <!--end::Menu-->
                                     </div>
                                 </div>
-                                <!--end::Menu wrapper-->
-                                <!--begin::Toolbar-->
                                 <div class="flex-equal text-end ms-1">
-                                    <a href="{{ route('login') }}" class="btn btn-success">Sign In</a>
+                                    <a href="{{ route('login') }}" class="btn btn-success">Masuk</a>
                                 </div>
-                                <!--end::Toolbar-->
                             </div>
-                            <!--end::Wrapper-->
                         </div>
-                        <!--end::Container-->
                     </div>
-                    <!--end::Header-->
-                    <!--begin::Landing hero-->
                     <div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
-                        <!--begin::Heading-->
                         <div class="text-center mb-5 mb-lg-10 py-10 py-lg-20">
-                            <!--begin::Title-->
                             <h1 class="text-white lh-base fw-bold fs-2x fs-lg-3x mb-15"> Jaringan Dokumentasi dan Informasi
                                 Hukum (JDIH)
                                 <br />
@@ -143,8 +97,6 @@
                                     <span id="kt_landing_hero_text">KABUPATEN MAGETAN</span>
                                 </span>
                             </h1>
-                            <!--end::Title-->
-                            <!--begin::Action-->
                             <br>
                             <br>
                             <br>
@@ -161,13 +113,9 @@
                             <a class="btn btn-primary ms-3">Peraturan Kepala Desa</a>
                             <a class="btn btn-primary ms-3">Rancangan Peraturan Bupati</a>
                             <a class="btn btn-primary ms-3">Rancangan Peraturan Daerah</a>
-                            <!--end::Action-->
                         </div>
                     </div>
-                    <!--end::Landing hero-->
                 </div>
-                <!--end::Wrapper-->
-                <!--begin::Curve bottom-->
                 <div class="landing-curve landing-dark-color mb-10 mb-lg-20">
                     <svg viewBox="15 12 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -175,23 +123,11 @@
                             fill="currentColor"></path>
                     </svg>
                 </div>
-                <!--end::Curve bottom-->
             </div>
-            <!--end::Header Section-->
-
-            <!--begin::Statistics Section-->
             <div class="mt-sm-n10">
-
-                <!--begin::Pricing Section-->
-
-                <!--end::Pricing Section-->
-                <!--begin::Testimonials Section-->
                 <div class="mt-20 mb-n20 position-relative z-index-2">
-                    <!--begin::Container-->
                     <div class="container">
-                        <!--begin::Heading-->
                         <div class="text-center mb-17">
-                            <!--begin::Title-->
                             <div class="card">
                                 <div class="card-body p-4" style="background-color: #001f3f; color: #fff;">
                                     <form method="get" id="searchForm" class="mb-0" action="/search">
@@ -200,11 +136,9 @@
                                                 <div class="position-relative">
                                                     <div
                                                         class="position-absolute translate-middle-y top-50 start-0 ms-5 me-3">
-                                                        <!--begin::Svg Icon | path: icons/duotune/finance/fin002.svg-->
                                                         <span class="svg-icon svg-icon-2hx">
                                                             <i class="bi bi-search"></i>
                                                         </span>
-                                                        <!--end::Svg Icon-->
                                                     </div>
                                                     <input type="text" class="form-control form-control-solid ps-12"
                                                         name="result" value="" placeholder="Search"
@@ -217,12 +151,6 @@
                                                         <div class="d-flex gap-2">
                                                             <button type="submit" class="btn btn-primary w-125px"
                                                                 fdprocessedid="ti1778">Search</button>
-                                                            <a id="kt_horizontal_search_advanced_link"
-                                                                class="btn btn-secondary w-125px"
-                                                                data-bs-toggle="collapse" href="#kt_advanced_search_form"
-                                                                aria-expanded="true">
-                                                                Adv. Search
-                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -231,13 +159,9 @@
                                         <div class="collapse" id="kt_advanced_search_form">
                                             <div class="separator separator-dashed mt-9 mb-6"></div>
                                             <div class="row g-8 mb-8">
-
                                             </div>
-                                            <!--end::Col-->
                                         </div>
-                                        <!--end::Row-->
                                 </div>
-                                <!--end::Advance form-->
                                 </form>
                                 @if (isset($produk_hukum) && count($produk_hukum) > 0)
                                     <table id="kt_datatable_dom_positioning"
@@ -284,14 +208,9 @@
                         <br>
 
                     </div>
-                    <!--end::Highlight-->
                 </div>
-                <!--end::Container-->
             </div>
-            <!--end::Testimonials Section-->
-            <!--begin::Footer Section-->
             <div class="mb-0">
-                <!--begin::Curve top-->
                 <div class="landing-curve landing-dark-color">
                     <svg viewBox="15 -1 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -299,72 +218,38 @@
                             fill="currentColor"></path>
                     </svg>
                 </div>
-                <!--end::Curve top-->
-                <!--begin::Wrapper-->
                 <div class="landing-dark-bg pt-20">
-                    <!--begin::Container-->
                     <div class="container">
-                        <!--begin::Row-->
                         <div class="row py-10 py-lg-20">
-                            <!--begin::Col-->
                             <div class="col-lg-6 pe-lg-16 mb-10 mb-lg-0">
-                                <!--begin::Block-->
                                 <div class="rounded landing-dark-border p-9 mb-10">
-                                    <!--begin::Title-->
                                     <h2 class="text-white">Lokasi</h2>
-                                    <!--end::Title-->
-                                    <!--begin::Text-->
                                     <span class="fw-normal fs-4 text-gray-700"><iframe
                                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63268.547042251244!2d111.26932904664623!3d-7.652560444976269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79922da09b91f7%3A0xfbda3bb4e910956e!2sKantor%20Bupati%20Magetan!5e0!3m2!1sid!2sid!4v1695781485485!5m2!1sid!2sid"
                                             width="540" height="300" style="border:0;" allowfullscreen=""
                                             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         <a href="https://keenthemes.com/support"
                                             class="text-white opacity-50 text-hover-primary"></a></span>
-                                    <!--end::Text-->
                                 </div>
-                                <!--end::Block-->
-
                             </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
                             <div class="col-lg-6 ps-lg-16">
-                                <!--begin::Navs-->
                                 <div class="d-flex justify-content-center">
-                                    <!--begin::Links-->
                                     <div class="d-flex fw-semibold flex-column me-20">
-                                        <!--begin::Subtitle-->
                                         <h4 class="fw-bold text-gray-400 mb-6">Tautan Lainnya</h4>
-                                        <!--end::Subtitle-->
-                                        <!--begin::Link-->
                                         <a href="https://www.dokumjdih.jatimprov.go.id/"
                                             class="text-white opacity-50 text-hover-primary fs-5 mb-6">JDIH Prov. Jatim</a>
-                                        <!--end::Link-->
-                                        <!--begin::Link-->
                                         <a href="http://jdih-prokum.magetan.go.id/"
                                             class="text-white opacity-50 text-hover-primary fs-5 mb-6">JDIH Kab.
                                             Magetan</a>
-                                        <!--end::Link-->
-                                        <!--begin::Link-->
                                         <a href="https://jdihn.go.id/"
                                             class="text-white opacity-50 text-hover-primary fs-5 mb-6">JDIHN</a>
-                                        <!--end::Link-->
-                                        <!--begin::Link-->
                                         <a href="http://jdih.kemendagri.go.id/"
                                             class="text-white opacity-50 text-hover-primary fs-5 mb-6">JDIH Kemendagri</a>
-                                        <!--end::Link-->
-                                        <!--begin::Link-->
                                         <a href="https://dprd.magetan.go.id/"
                                             class="text-white opacity-50 text-hover-primary fs-5 mb-6">JDIH Sekwan</a>
-                                        <!--end::Link-->
-                                        <!--begin::Link-->
                                     </div>
-                                    <!--end::Links-->
-                                    <!--begin::Links-->
                                     <div class="d-flex fw-semibold flex-column ms-lg-20">
-                                        <!--begin::Subtitle-->
                                         <h4 class="fw-bold text-gray-400 mb-6">Narahubung</h4>
-                                        <!--end::Subtitle-->
-                                        <!--begin::Link-->
                                         <a href="https://www.instagram.com/keenthemes" class="mb-6">
                                             <img src="{{ asset('/media/svg/brand-logos/instagram-2-1.svg') }}"
                                                 class="h-20px me-2" alt="" />
@@ -380,51 +265,24 @@
                                         <br>
                                         <span class="text-white opacity-50 text-hover-primary fs-5"
                                             style="margin-left: 27px">(0351) 894619 FAX</span>
-                                        <!--end::Link-->
                                     </div>
-                                    <!--end::Links-->
                                 </div>
-                                <!--end::Navs-->
                             </div>
-                            <!--end::Col-->
                         </div>
-                        <!--end::Row-->
                     </div>
-                    <!--end::Container-->
-                    <!--begin::Separator-->
                     <div class="landing-dark-separator"></div>
-                    <!--end::Separator-->
-                    <!--begin::Container-->
                     <div class="container">
-                        <!--begin::Wrapper-->
                         <div class="d-flex flex-column flex-md-row flex-stack py-7 py-lg-10">
-                            <!--begin::Copyright-->
                             <div class="d-flex align-items-center order-2 order-md-1">
-                                <!--begin::Logo-->
-                                <a href="../../demo1/dist/landing.html">
-                                    <img alt="Logo" src="{{ asset('/media/logos/landing.svg') }}"
-                                        class="h-15px h-md-20px" />
-                                </a>
-                                <!--end::Logo image-->
-                                <!--begin::Logo image-->
                                 <span class="mx-5 fs-6 fw-semibold text-gray-600 pt-1"
                                     href="https://keenthemes.com">Copyright &copy; Dinas Komunikasi dan Informatika
                                     Pemerintah Kabupaten Magetan</span>
-                                <!--end::Logo image-->
                             </div>
-                            <!--end::Copyright-->
-
                         </div>
-                        <!--end::Wrapper-->
                     </div>
-                    <!--end::Container-->
                 </div>
-                <!--end::Wrapper-->
             </div>
-            <!--end::Footer Section-->
-            <!--begin::Scrolltop-->
             <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-                <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
                 <span class="svg-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -435,15 +293,9 @@
                             fill="currentColor" />
                     </svg>
                 </span>
-                <!--end::Svg Icon-->
             </div>
-            <!--end::Scrolltop-->
         </div>
-
-
-        <!--begin::Scrolltop-->
         <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-            <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
             <span class="svg-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -454,26 +306,16 @@
                         fill="currentColor" />
                 </svg>
             </span>
-            <!--end::Svg Icon-->
         </div>
-        <!--end::Scrolltop-->
-        <!--begin::Javascript-->
         <script>
             var hostUrl = "assets/";
         </script>
-        <!--begin::Global Javascript Bundle(mandatory for all pages)-->
         <script src="{{ asset('/plugins/global/plugins.bundle.js') }}"></script>
         <script src="{{ asset('/js/scripts.bundle.js') }}"></script>
-        <!--end::Global Javascript Bundle-->
-        <!--begin::Vendors Javascript(used for this page only)-->
         <script src="{{ asset('/plugins/custom/fslightbox/fslightbox.bundle.js') }}"></script>
         <script src="{{ asset('/plugins/custom/typedjs/typedjs.bundle.js') }}"></script>
-        <!--end::Vendors Javascript-->
-        <!--begin::Custom Javascript(used for this page only)-->
         <script src="{{ asset('/js/custom/landing.js') }}"></script>
         <script src="{{ asset('/js/custom/pages/pricing/general.js') }}"></script>
-        <!--end::Custom Javascript-->
-        <!--end::Javascript-->
     @endsection
 
 

@@ -8,7 +8,6 @@
 
     <body id="kt_body" class="app-blank app-blank bgi-size-cover bgi-position-center bgi-no-repeat">
         <div class="d-flex flex-column flex-root" id="kt_app_root">
-            <!--begin::Page bg image-->
             <style>
                 body {
                     background-image: url('/media/auth/bg4.jpg');
@@ -20,11 +19,8 @@
             </style>
 
             <div class="d-flex flex-column flex-column-fluid flex-lg-row">
-                <!--begin::Aside-->
                 <div class="d-flex flex-center w-lg-50 pt-15 pt-lg-0 px-10">
-                    <!--begin::Aside-->
                     <div class="d-flex flex-center flex-lg-start flex-column">
-                        <!--begin::Logo-->
                         <a href="../../demo1/dist/index.html" class="mb-7">
                             <img alt="Logo" src="{{ asset('media/logos/jdih_logo.png') }}" />
                         </a>

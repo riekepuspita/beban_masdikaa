@@ -44,9 +44,9 @@ Route::get('tambahinformasi', function () {
     return view('menu.tambahinformasi');
 })->name('menu.tambahinformasi');
 
-Route::get('produkhukum', function () {
-    return view('menu.produkhukum');
-})->name('menu.produkhukum');
+// Route::get('produkhukum', function () {
+//     return view('menu.produkhukum');
+// })->name('menu.produkhukum')->middleware('auth');
 
 Route::get('lihatprodukhukum', function () {
     return view('menu.lihatprodukhukum');
@@ -54,36 +54,36 @@ Route::get('lihatprodukhukum', function () {
 
 Route::get('tambahprodukhukum', function () {
     return view('menu.tambahprodukhukum');
-})->name('menu.tambahprodukhukum');
+})->name('menu.tambahprodukhukum')->middleware('auth');
 
 Route::get('kegiatanhukum', function () {
     return view('menu.kegiatanhukum');
-})->name('menu.kegiatanhukum')->middleware('auth');
+})->name('menu.kegiatanhukum');
 
 Route::get('tambahkegiatanhukum', function () {
     return view('menu.tambahkegiatan');
-})->name('menu.tambahkegiatan');
+})->name('menu.tambahkegiatan')->middleware('auth');
 
 Route::get('faq', function () {
     return view('menu.faq');
-})->name('menu.faq');
+})->name('menu.faq')->middleware('auth');
 
 Route::get('tambahfaq', function () {
     return view('menu.tambahfaq');
-})->name('menu.tambahfaq');
+})->name('menu.tambahfaq')->middleware('auth');
 
 Route::get('lpprodukhukum', function () {
     return view('landingpage.lpprodukhukum');
-})->name('landingpage.lpprodukhukum');
+})->name('landingpage.lpprodukhukum')->middleware('auth');
 
 Route::get('lihatlpprodukhukum', function () {
     return view('landingpage.lihatlpprodukhukum');
-})->name('landingpage.lihatlpprodukhukum');
+})->name('landingpage.lihatlpprodukhukum')->middleware('auth');
 
 
-Route::get('informasihukum', [informasihukumController::class, 'index'])->name('menu.informasihukum');
+Route::get('informasihukum', [informasihukumController::class, 'index'])->name('menu.informasihukum')->middleware('auth');
 Route::get('produkhukum', [produkhukumController::class, 'index'])->name('menu.produkhukum')->middleware('auth');
-Route::get('kegiatanhukum', [kegiatanhukumController::class, 'index'])->name('menu.kegiatanhukum');
+Route::get('kegiatanhukum', [kegiatanhukumController::class, 'index'])->name('menu.kegiatanhukum')->middleware('auth');
 Route::post('/produkhukum/add', [produkhukumController::class, 'store_tambahprodukhukum'])->name('add_produkhukum');
 Route::get('/tambahprodukhukum', [produkhukumController::class, 'pilihanprodukhukum'])->name('menu.tambahprodukhukum');
 Route::get('/produk', [produkhukumController::class, 'index'])->name('produk.index');
