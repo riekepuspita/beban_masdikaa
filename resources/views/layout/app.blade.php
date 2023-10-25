@@ -48,6 +48,7 @@
     <script src="{{ asset('js/custom/utilities/modals/new-target.js') }}"></script>
     <script src="{{ asset('js/custom/utilities/modals/users-search.js') }}"></script>
     <script src="{{ asset('js/custom/authentication/sign-in/general.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     @yield('script')
 </body>

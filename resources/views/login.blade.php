@@ -56,16 +56,32 @@
                                         name="password" id="password" required />
                                 </div>
 
-                                <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
-                                    <div></div>
-                                    <a href="../../demo1/dist/authentication/layouts/creative/reset-password.html" class="link-primary">Forgot Password
-                                        ?</a>
-                                </div>
+                                    @if (config('services.recaptcha.key'))
+                                        <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8 g-recaptcha" data-sitekey="{{ config('services.recaptcha.key') }}">
+                                        </div>
+                                        
+                                    @endif
+
+                                    {{-- @if($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    
+                                    @if (session('loginError'))
+                                        <div class="alert alert-danger">
+                                            {{ session('loginError') }}
+                                        </div>
+                                    @endif --}}
 
                                 <div class="d-grid mb-10">
                                     <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
                                         <span class="indicator-label">Masuk</span>
-
+                                    
                                         <span class="indicator-progress">Please wait...
                                             <span class="spinner-border spinner-border-sm align-middle ms-2">
                                             </span>
@@ -102,5 +118,6 @@
                 }
                 document.documentElement.setAttribute("data-theme", themeMode);
             }
+            
         </script>
     @endsection
