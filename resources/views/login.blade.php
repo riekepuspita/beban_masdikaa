@@ -56,12 +56,6 @@
                                         name="password" id="password" required />
                                 </div>
 
-                                    @if (config('services.recaptcha.key'))
-                                        <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8 g-recaptcha" data-sitekey="{{ config('services.recaptcha.key') }}">
-                                        </div>
-                                        
-                                    @endif
-
                                     {{-- @if($errors->any())
                                         <div class="alert alert-danger">
                                             <ul>
