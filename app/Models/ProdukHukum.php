@@ -14,7 +14,7 @@ class ProdukHukum extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'tahun', 'id_tipe', 'judul', 'id_status'
+        'tahun', 'id_tag','id_tipe', 'judul', 'id_status', 
     ];
 
     public $timestime = false;

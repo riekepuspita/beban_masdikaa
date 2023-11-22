@@ -90,7 +90,7 @@
                     <div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
                         <div class="text-center mb-5 mb-lg-10 py-10 py-lg-20">
                             <h1 class="text-white lh-base fw-bold fs-2x fs-lg-3x mb-15"> Jaringan Dokumentasi dan Informasi
-                                Hukum (JDIH)
+                                Hukum
                                 <br />
                                 <span
                                     style="background: linear-gradient(to right, #12CE5D 0%, #FFD80C 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
@@ -101,7 +101,7 @@
                             <br>
                             <br>
                             <br>
-                            <a href="../../demo1/dist/index.html" class="btn btn-primary">Peraturan Daerah</a>
+                            {{-- <a href="../../demo1/dist/index.html" class="btn btn-primary">Peraturan Daerah</a>
                             <a class="btn btn-primary ms-3">Peraturan Bupati</a>
                             <a class="btn btn-primary ms-3">Keputusan Bupati</a>
                             <a class="btn btn-primary ms-3">Instruksi Bupati</a>
@@ -112,7 +112,7 @@
                             <a class="btn btn-primary ms-3">Peraturan Bersama Kepala Desa</a>
                             <a class="btn btn-primary ms-3">Peraturan Kepala Desa</a>
                             <a class="btn btn-primary ms-3">Rancangan Peraturan Bupati</a>
-                            <a class="btn btn-primary ms-3">Rancangan Peraturan Daerah</a>
+                            <a class="btn btn-primary ms-3">Rancangan Peraturan Daerah</a> --}}
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                                                     <div class="col-6 d-grid">
                                                         <div class="d-flex gap-2">
                                                             <button type="submit" class="btn btn-primary w-125px"
-                                                                fdprocessedid="ti1778">Search</button>
+                                                                fdprocessedid="ti1778">Cari</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -250,7 +250,7 @@
                                     </div>
                                     <div class="d-flex fw-semibold flex-column ms-lg-20">
                                         <h4 class="fw-bold text-gray-400 mb-6">Narahubung</h4>
-                                        <a href="https://www.instagram.com/keenthemes" class="mb-6">
+                                        <a href="https://www.instagram.com/kpumagetanjdih" class="mb-6">
                                             <img src="{{ asset('/media/svg/brand-logos/instagram-2-1.svg') }}"
                                                 class="h-20px me-2" alt="" />
                                             <span

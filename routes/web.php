@@ -72,9 +72,9 @@ Route::get('tambahfaq', function () {
     return view('menu.tambahfaq');
 })->name('menu.tambahfaq')->middleware('auth');
 
-Route::get('lpprodukhukum', function () {
-    return view('landingpage.lpprodukhukum');
-})->name('landingpage.lpprodukhukum')->middleware('auth');
+// Route::get('lpprodukhukum', function () {
+//     return view('landingpage.lpprodukhukum');
+// })->name('landingpage.lpprodukhukum')->middleware('auth');
 
 Route::get('lihatlpprodukhukum', function () {
     return view('landingpage.lihatlpprodukhukum');

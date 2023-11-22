@@ -33,7 +33,7 @@ class loginController extends Controller
         }
 
         // dd('error login');
-        return back()->with('loginError', 'Gagal Login');
+        return back()->with('loginError', 'Pastikan email dan password anda benar!');
     }
 
     public function logout()
@@ -43,6 +43,7 @@ class loginController extends Controller
         request()->session()->invalidate();
         request()->session()->regenerateToken();
 
-        return redirect('login');
+        // return redirect('login');
+        return redirect()->route('lpprodukhukum');
     }
 }

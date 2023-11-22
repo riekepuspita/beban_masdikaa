@@ -2,9 +2,11 @@
     data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="225px"
     data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
-        <a href="{{ route('dasbor') }}">
-            <img alt="Logo" src="{{ asset('media/logos/jdih_logo2.png') }}" class="h-70px app-sidebar-logo-default" />
-            <img alt="Logo" src="{{ asset('media/logos/jdih_logo2.png') }}" class="h-70px app-sidebar-logo-minimize" />
+        <a>
+            <img alt="Logo" src="{{ asset('media/logos/jdih_logo2.png') }}"
+                class="h-70px app-sidebar-logo-default" />
+            <img alt="Logo" src="{{ asset('media/logos/jdih_logo2.png') }}"
+                class="h-70px app-sidebar-logo-minimize" />
         </a>
         <div id="kt_app_sidebar_toggle"
             class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary body-bg h-30px w-30px position-absolute top-50 start-100 translate-middle rotate"
@@ -72,8 +74,8 @@
                         <span class="menu-icon">
                             <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24"
                                     viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect opacity="0.5" x="7" y="2" width="14" height="16"
-                                        rx="3" fill="currentColor" />
+                                    <rect opacity="0.5" x="7" y="2" width="14" height="16" rx="3"
+                                        fill="currentColor" />
                                     <rect x="3" y="6" width="14" height="16" rx="3"
                                         fill="currentColor" />
                                 </svg>
@@ -82,7 +84,7 @@
                         <span class="menu-title">Produk Hukum</span>
                     </a>
                 </div>
-                <div class="menu-item menu-accordion">
+                {{-- <div class="menu-item menu-accordion">
                     <a class="menu-link" href="{{ route('menu.informasihukum') }}">
                         <span class="menu-icon">
                             <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24"
@@ -187,10 +189,9 @@
                                 <span class="menu-title">Anggota</span>
                             </a>
                         </div>
-                    </div>
-                </div>
+                    </div> --}}
             </div>
         </div>
     </div>
 </div>
-
+</div>

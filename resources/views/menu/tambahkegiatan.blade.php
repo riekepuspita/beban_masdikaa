@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Tambah Kegiatan Hukum
+    Lihat Kegiatan Hukum
 @endsection
 
 @section('head')
@@ -31,7 +31,7 @@
                                         class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ms-10 mb-4">
                                         <h1
                                             class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                                            Tambah Kegiatan Hukum</h1>
+                                            Lihat Kegiatan Hukum</h1>
                                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                             <li class="breadcrumb-item text-muted">
                                                 <a href="../../demo1/dist/index.html"
@@ -44,7 +44,7 @@
                                             <li class="breadcrumb-item">
                                                 <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                             </li>
-                                            <li class="breadcrumb-item text-muted">Tambah Kegiatan Hukum</li>
+                                            <li class="breadcrumb-item text-muted">Lihat Kegiatan Hukum</li>
                                         </ul>
                                     </div>
                                 <div id="kt_app_content" class="app-content flex-column-fluid">
@@ -92,8 +92,7 @@
                                                                             style="display: none;">
                                                                         <button class="btn btn-primary float-end"
                                                                             id="pilihfile2"
-                                                                            onclick="buttonfiletambah()">Tambah
-                                                                            File</button>
+                                                                            onclick="buttonfiletambah()">Lihat</button>
                                                                     </div>
                                                                 </div>
                                                                 <div class="mb-3 row">
@@ -113,7 +112,7 @@
                                                                 <div class="d-flex justify-content-end">
 
                                                                     <button type="button"
-                                                                        class="btn btn-success me-3   ">Simpan</button>
+                                                                        class="btn btn-success me-3   ">Simpan Perubahan</button>
                                                                     <a href="/kegiatanhukum"
                                                                         class="btn btn-danger ms-3">Batal</a>
                                                                 </div>

@@ -60,23 +60,26 @@
                                                                 <div class="mb-3 row">
                                                                     <label for="sel1"
                                                                         class="col-md-4 col-form-label">Tahun</label>
-                                                                        <div class="col-md-8">
-                                                                            <select class="form-select" id="sel0" name="sellist0">
-                                                                                <option value="" selected disabled hidden>-- Pilih Tahun --</option>
-                                                                                @php
-                                                                                    $startYear = 2023;$endYear = $startYear + 10; // Tahun terakhir yang ingin ditampilkan
-                                                                                @endphp
-                                                                                @for ($year = $startYear; $year <= $endYear; $year++)
-                                                                                    <option value="{{ $year }}">
-                                                                                        {{ $year }}
-                                                                                    </option>
-                                                                                @endfor
-                                                                            </select>
-                                                                        </div>
-                                                                        
-                                                                        
+                                                                    <div class="col-md-8">
+                                                                        <select class="form-select" id="sel0"
+                                                                            name="sellist0">
+                                                                            <option value="" selected disabled hidden>
+                                                                                -- Pilih Tahun --</option>
+                                                                            @php
+                                                                                $startYear = 2023;
+                                                                                $endYear = $startYear + 10; // Tahun terakhir yang ingin ditampilkan
+                                                                            @endphp
+                                                                            @for ($year = $startYear; $year <= $endYear; $year++)
+                                                                                <option value="{{ $year }}">
+                                                                                    {{ $year }}
+                                                                                </option>
+                                                                            @endfor
+                                                                        </select>
+                                                                    </div>
+
+
                                                                 </div>
-                                                                
+
                                                                 <div class="mb-3 row">
                                                                     <label for="sel1"
                                                                         class="col-md-4 col-form-label">Tipe
@@ -106,7 +109,8 @@
                                                                             <option value=""selected disabled hidden>
                                                                                 -- Pilih Tag --</option>
                                                                             @foreach ($tag_src_produkhukum as $tag_src_produkhukum)
-                                                                                <option value="{{ $tag_src_produkhukum->id_tag }}">
+                                                                                <option
+                                                                                    value="{{ $tag_src_produkhukum->id_tag }}">
                                                                                     {{ $tag_src_produkhukum->nama_tag }}
                                                                                 </option>
                                                                             @endforeach
@@ -293,7 +297,8 @@
                                                                             class="col-md-4 col-form-label">File
                                                                             Peraturan</label>
                                                                         <div class="col-md-5 d-flex align-items-center">
-                                                                            <input type="file" id="fileperaturan" name="fileperaturan" accept=".pdf">
+                                                                            <input type="file" id="fileperaturan"
+                                                                                name="fileperaturan" accept=".pdf">
 
                                                                         </div>
                                                                     </div>
@@ -303,10 +308,13 @@
                                                                             class="col-md-4 col-form-label">File
                                                                             Abstraksi</label>
                                                                         <div class="col-md-5 d-flex align-items-center">
-                                                                            <input type="file" id="fileabstraksi" name="fileabstraksi" accept=".pdf">
+                                                                            <input type="file" id="fileabstraksi"
+                                                                                name="fileabstraksi" accept=".pdf">
 
                                                                         </div>
                                                                     </div>
+
+
 
                                                                     <div class="d-flex justify-content-end">
                                                                         <button type="button"
@@ -376,6 +384,18 @@
                 console.log('File selected:', selectedFile.name);
             }
         });
+
+        function buttonfileupload() {
+            document.getElementById('csv_file').click();
+            document.getElementById('pilihfile2').classList.add('clicked');
+        }
+
+        document.getElementById('fileabstraksi').addEventListener('change', function() {
+            const selectedFile = this.files[0];
+            if (selectedFile) {
+                console.log('File selected:', selectedFile.name);
+            }
+        });
     </script>
 
     <script>
@@ -426,7 +446,7 @@
                         console.log(response);
                         if (response.status == 400) {
                             $('#saveform_errList').html("");
-                            $('#saveform_errList').addClass('alert alert-danger');
+                            $('#saveform_errList').addClass('alert alert-danger ms-3');
                             $.each(response.errors, function(key, err_values) {
                                 $('#saveform_errList').append('<li>' + err_values +
                                     '</li>');
