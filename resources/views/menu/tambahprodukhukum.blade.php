@@ -447,6 +447,7 @@
                         if (response.status == 400) {
                             $('#saveform_errList').html("");
                             $('#saveform_errList').addClass('alert alert-danger ms-3');
+                            $('#saveform_errList').append('<li>' + response.message + '</li>');
                             $.each(response.errors, function(key, err_values) {
                                 $('#saveform_errList').append('<li>' + err_values +
                                     '</li>');

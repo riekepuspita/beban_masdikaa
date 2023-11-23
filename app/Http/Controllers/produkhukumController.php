@@ -17,12 +17,12 @@ use Illuminate\Support\Str;
 class produkhukumController extends Controller
 {
 
-    public function yourControllerMethod()
-    {
-        $years = ProdukHukum::all(); // Mengambil semua data tahun dari tabel produkhukum
+    // public function yourControllerMethod()
+    // {
+    //     $years = ProdukHukum::all(); // Mengambil semua data tahun dari tabel produkhukum
 
-        return view('your.view', ['years' => $years]);
-    }
+    //     return view('your.view', ['years' => $years]);
+    // }
 
     public function index(Request $filter)
     {
@@ -88,8 +88,22 @@ class produkhukumController extends Controller
                 'no_peraturan.regex' => 'Nomor Peraturan hanya boleh berisi angka',
                 'no_panggil.required' => 'No Panggil wajib diisi',
                 'jenis_bentuk_peraturan.required' => 'Jenis Bentuk Peraturan wajib diisi',
+                'cetakan_edisi.required' => 'Cetakan Edisi wajib diisi',
+                'tempat_terbit.required' => 'Tempat Terbit wajib diisi',
+                'penerbit.required' => 'Penerbit wajib diisi',
+                'tanggal_penetapan.required' => 'Tanggal Penetapan wajib diisi',
+                'deskripsi_fisik.required' => 'Deskripsi Fisik wajib diisi',
+                'sumber.required' => 'Sumber wajib diisi',
+                'subjek.required' => 'Subjek wajib diisi',
+                'isbn.required' => 'Isbn wajib diisi',
+                'id_status.required' => 'Status wajib diisi',
+                'bahasa.required' => 'Bahasa wajib diisi',
+                'lokasi.required' => 'Lokasi wajib diisi',
+                'abstraksi.required' => 'Abstraksi wajib diisi',
+                'catatan.required' => 'Catatan wajib diisi',
+                'file_peraturan.required' => 'File Peraturan wajib diisi',
+                'file_abstraksi.required' => 'File Abstraksi wajib diisi',
                 
-                // gampang banget :)
             ]
         );
 
@@ -129,20 +143,39 @@ class produkhukumController extends Controller
                 mkdir($folderPath, 0755, true);
             }
 
-            $namaFile1 = $request->file('file_peraturan')->getClientOriginalName();
-            $namaFile2 = $request->file('file_abstraksi')->getClientOriginalName();
-
-            $request->file('file_peraturan')->move($folderPath, $namaFile1);
-            $request->file('file_abstraksi')->move($folderPath, $namaFile2);
-
-            $produkhukum->file_peraturan = $namaFile1;
-            $produkhukum->file_abstraksi = $namaFile2;
-
-            $produkhukum->save();
-            return response()->json([
-                'status' => 200,
-                'message' => 'Produk Hukum ADDED Successfully',
-            ]);
+            if ($request->hasFile('file_peraturan') && $request->hasFile('file_abstraksi')) {
+                $namaFile1 = $request->file('file_peraturan')->getClientOriginalName();
+                $namaFile2 = $request->file('file_abstraksi')->getClientOriginalName();
+        
+                $request->file('file_peraturan')->move($folderPath, $namaFile1);
+                $request->file('file_abstraksi')->move($folderPath, $namaFile2);
+        
+                $produkhukum->file_peraturan = $namaFile1;
+                $produkhukum->file_abstraksi = $namaFile2;
+        
+                $produkhukum->save();
+        
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Produk Hukum ADDED Successfully',
+                ]);
+            } elseif (!$request->hasFile('file_peraturan') && !$request->hasFile('file_abstraksi')) {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'File Peraturan dan File Abstraksi belum diunggah',
+                ]);
+            } elseif (!$request->hasFile('file_peraturan')) {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'File Peraturan belum diunggah',
+                ]);
+            } elseif (!$request->hasFile('file_abstraksi')) {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'File Abstraksi belum diunggah',
+                ]);
+            }
+            
         }
     }
 
